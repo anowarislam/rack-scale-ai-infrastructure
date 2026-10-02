@@ -1,0 +1,42 @@
+{
+  "synthetic": true,
+  "controlled_trial": [
+    {
+      "trial": "baseline-1",
+      "useful_units": 1000,
+      "elapsed_s": 400,
+      "restore_check": true
+    },
+    {
+      "trial": "staggered-1",
+      "useful_units": 1000,
+      "elapsed_s": 140,
+      "restore_check": true
+    },
+    {
+      "trial": "baseline-2",
+      "useful_units": 1000,
+      "elapsed_s": 398,
+      "restore_check": true
+    },
+    {
+      "trial": "staggered-2",
+      "useful_units": 1000,
+      "elapsed_s": 142,
+      "restore_check": true
+    },
+    {
+      "trial": "baseline-3",
+      "useful_units": 1000,
+      "elapsed_s": 402,
+      "restore_check": true
+    },
+    {
+      "trial": "staggered-3",
+      "useful_units": 1000,
+      "elapsed_s": 138,
+      "restore_check": true
+    }
+  ],
+  "note": "Instructor releases only after learner states intervention and guardrails; original synthetic outcomes, not real measurements."
+}

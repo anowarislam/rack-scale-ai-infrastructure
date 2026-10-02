@@ -1,0 +1,366 @@
+{
+  "schema_version": 1,
+  "source_policy": "Official primary sources; constructed numerical examples are course reasoning, not measured outcomes. Rolling docs must be revalidated against the deployed release.",
+  "sources": [
+    {
+      "id": "PLAT-KIND-030",
+      "title": "kind v0.30.0 release",
+      "url": "https://github.com/kubernetes-sigs/kind/releases/tag/v0.30.0",
+      "accessed_at": "2026-10-02",
+      "version_scope": "kind 0.30.0; Kubernetes 1.34.0 image",
+      "supports": "Published immutable node-image digest and amd64/arm64 scope",
+      "limitations": "Historical lab pin; no current production support claim"
+    },
+    {
+      "id": "PLAT-KIND-QUICK",
+      "title": "kind Quick Start",
+      "url": "https://kind.sigs.k8s.io/docs/user/quick-start/",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Rolling guide accessed 2026-10-02; used for named isolated clusters",
+      "supports": "Named cluster, explicit kubeconfig, create/delete workflow",
+      "limitations": "Actual kind runtime NOT_RUN due tool download timeouts"
+    },
+    {
+      "id": "PLAT-K8S-COMPONENTS",
+      "title": "Kubernetes Components",
+      "url": "https://v1-34.docs.kubernetes.io/docs/concepts/overview/components/",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Kubernetes 1.34 documentation",
+      "supports": "API server, etcd, scheduler, controller, kubelet roles",
+      "limitations": "Conceptual roles; not evidence of a healthy deployed cluster"
+    },
+    {
+      "id": "PLAT-K8S-JOB",
+      "title": "Kubernetes Jobs",
+      "url": "https://v1-34.docs.kubernetes.io/docs/concepts/workloads/controllers/job/",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Kubernetes 1.34 documentation",
+      "supports": "Job completions, retry behavior, repeated-execution caveat",
+      "limitations": "Application exactly-once effects and checkpoint correctness are separate"
+    },
+    {
+      "id": "PLAT-K8S-RESOURCE",
+      "title": "Resource Management for Pods and Containers",
+      "url": "https://v1-34.docs.kubernetes.io/docs/concepts/configuration/manage-resources-containers/",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Kubernetes 1.34 documentation",
+      "supports": "Requests, limits, scheduling and runtime enforcement distinctions",
+      "limitations": "Does not prove GPU performance or tenant isolation in the lab"
+    },
+    {
+      "id": "PLAT-K8S-ASSIGN",
+      "title": "Assigning Pods to Nodes",
+      "url": "https://v1-34.docs.kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Kubernetes 1.34 documentation",
+      "supports": "Required/preferred affinity, selectors and node assignment",
+      "limitations": "Labels are not independent proof of physical inventory"
+    },
+    {
+      "id": "PLAT-K8S-SCHED",
+      "title": "Scheduling Framework",
+      "url": "https://v1-34.docs.kubernetes.io/docs/concepts/scheduling-eviction/scheduling-framework/",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Kubernetes 1.34 reference scheduler",
+      "supports": "Scheduling cycles, filtering/scoring, extension boundaries",
+      "limitations": "Does not imply whole-Job atomic allocation or cover later APIs"
+    },
+    {
+      "id": "PLAT-K8S-QUOTA",
+      "title": "Resource Quotas",
+      "url": "https://v1-34.docs.kubernetes.io/docs/concepts/policy/resource-quotas/",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Kubernetes 1.34 documentation",
+      "supports": "Namespace resource caps and admission behavior",
+      "limitations": "Not a historical usage-decay fair-share policy or durable billing ledger"
+    },
+    {
+      "id": "PLAT-K8S-TOPO",
+      "title": "Control Topology Management Policies on a node",
+      "url": "https://v1-34.docs.kubernetes.io/docs/tasks/administer-cluster/topology-manager/",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Kubernetes 1.34 kubelet topology management",
+      "supports": "Node-local hint alignment, scopes and policies",
+      "limitations": "Does not establish inter-rack topology or measured fabric performance"
+    },
+    {
+      "id": "PLAT-K8S-GPU",
+      "title": "Schedule GPUs",
+      "url": "https://v1-34.docs.kubernetes.io/docs/tasks/manage-gpus/scheduling-gpus/",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Kubernetes 1.34 device-plugin extended-resource path",
+      "supports": "GPU plugin prerequisite and GPU request/limit rules",
+      "limitations": "GPU extension not executed; no driver/plugin compatibility matrix asserted"
+    },
+    {
+      "id": "PLAT-K8S-RBAC",
+      "title": "Using RBAC Authorization",
+      "url": "https://v1-34.docs.kubernetes.io/docs/reference/access-authn-authz/rbac/",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Kubernetes 1.34 documentation",
+      "supports": "Role, RoleBinding, ServiceAccount and resource/verb/scope semantics",
+      "limitations": "Permission-query lab NOT_RUN; RBAC is not kernel or data-plane isolation"
+    },
+    {
+      "id": "PLAT-K8S-PSS",
+      "title": "Pod Security Standards",
+      "url": "https://v1-34.docs.kubernetes.io/docs/concepts/security/pod-security-standards/",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Restricted profile pinned to v1.34 in namespace labels",
+      "supports": "Non-root, privilege escalation, capabilities and seccomp controls",
+      "limitations": "Profile compliance is not a complete security assessment"
+    },
+    {
+      "id": "PLAT-K8S-NETPOL",
+      "title": "Network Policies",
+      "url": "https://v1-34.docs.kubernetes.io/docs/concepts/services-networking/network-policies/",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Kubernetes 1.34 documentation",
+      "supports": "NetworkPolicy requires enforcing network implementation",
+      "limitations": "No network-policy enforcement claim for default CPU kind lab"
+    },
+    {
+      "id": "PLAT-K8S-VOLUMES",
+      "title": "Volumes",
+      "url": "https://v1-34.docs.kubernetes.io/docs/concepts/storage/volumes/",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Kubernetes 1.34 documentation",
+      "supports": "emptyDir lifetime and volume distinctions",
+      "limitations": "Does not prove storage durability in a concrete deployment"
+    },
+    {
+      "id": "PLAT-K8S-PV",
+      "title": "Persistent Volumes",
+      "url": "https://v1-34.docs.kubernetes.io/docs/concepts/storage/persistent-volumes/",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Kubernetes 1.34 documentation",
+      "supports": "PVC/PV binding, access/reclaim and storage lifecycle concepts",
+      "limitations": "Local kind persistence does not prove node/disk-loss recovery"
+    },
+    {
+      "id": "PLAT-K8S-PROBES",
+      "title": "Liveness, Readiness, and Startup Probes",
+      "url": "https://v1-34.docs.kubernetes.io/docs/concepts/configuration/liveness-readiness-startup-probes/",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Kubernetes 1.34 documentation",
+      "supports": "Distinct probe purposes and lifecycle effects",
+      "limitations": "Constructed examples are not measured service behavior"
+    },
+    {
+      "id": "PLAT-K8S-SKEW",
+      "title": "Version Skew Policy",
+      "url": "https://v1-34.docs.kubernetes.io/releases/version-skew-policy/",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Kubernetes 1.34 reference",
+      "supports": "kubectl within one minor version of API server; upgrade constraints",
+      "limitations": "Current installed kubectl 1.37.1 is not treated as validated with 1.34"
+    },
+    {
+      "id": "PLAT-K8S-DRAIN",
+      "title": "Safely Drain a Node",
+      "url": "https://v1-34.docs.kubernetes.io/docs/tasks/administer-cluster/safely-drain-node/",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Kubernetes 1.34 documentation",
+      "supports": "Drain/eviction and disruption-budget caveats",
+      "limitations": "No production drain or node failure executed"
+    },
+    {
+      "id": "PLAT-K8S-HA",
+      "title": "Options for Highly Available Topology",
+      "url": "https://v1-34.docs.kubernetes.io/docs/setup/production-environment/tools/kubeadm/ha-topology/",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Kubernetes 1.34 kubeadm guide",
+      "supports": "Stacked/external etcd topology and failure-domain design",
+      "limitations": "Single-control-plane kind lab does not implement HA"
+    },
+    {
+      "id": "PLAT-SLURM-RELEASE",
+      "title": "Slurm 25.05.3 release",
+      "url": "https://github.com/SchedMD/slurm/releases/tag/slurm-25-05-3-1",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Slurm 25.05.3 tag",
+      "supports": "Official reference release and source tag",
+      "limitations": "Historical teaching baseline, not current production recommendation"
+    },
+    {
+      "id": "PLAT-SLURM-COMMIT",
+      "title": "Slurm 25.05.3 source identity",
+      "url": "https://github.com/SchedMD/slurm/commit/1c0b066e1e0432a94b0149cf40d23b882e137942",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Commit 1c0b066e1e0432a94b0149cf40d23b882e137942",
+      "supports": "Immutable source identity and version metadata",
+      "limitations": "Source identity does not imply a completed or supported VM build"
+    },
+    {
+      "id": "PLAT-SLURM-CONFIG",
+      "title": "Slurm 25.05.3 slurm.conf manual",
+      "url": "https://raw.githubusercontent.com/SchedMD/slurm/slurm-25-05-3-1/doc/man/man5/slurm.conf.5",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Slurm 25.05.3 versioned manual",
+      "supports": "Daemon/state/partition config, unset task/accounting defaults, controller backup state, completion plugin",
+      "limitations": "Static mechanism check; native config parser/startup NOT_RUN"
+    },
+    {
+      "id": "PLAT-SLURM-SBATCH",
+      "title": "Slurm 25.05.3 sbatch manual",
+      "url": "https://raw.githubusercontent.com/SchedMD/slurm/slurm-25-05-3-1/doc/man/man1/sbatch.1",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Slurm 25.05.3 versioned manual",
+      "supports": "Task/CPU shape, requeue script restart, open-mode and restart count",
+      "limitations": "Application recovery and exactly-once side effects remain outside scheduler guarantee"
+    },
+    {
+      "id": "PLAT-SLURM-ADMIN",
+      "title": "Quick Start Administrator Guide",
+      "url": "https://slurm.schedmd.com/quickstart_admin.html",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Rolling official guide accessed 2026-10-02; baseline checked against 25.05.3",
+      "supports": "Controller/node/step roles, setup prerequisites and operational concepts",
+      "limitations": "VM setup NOT_RUN; package/platform compatibility not certified"
+    },
+    {
+      "id": "PLAT-SLURM-SCONTROL",
+      "title": "scontrol reference",
+      "url": "https://slurm.schedmd.com/scontrol.html",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Rolling official manual accessed 2026-10-02",
+      "supports": "Explicit batch requeue and read-only configuration/job inspection",
+      "limitations": "Permissions and exact behavior depend on installed version and policy"
+    },
+    {
+      "id": "PLAT-SLURM-GANG",
+      "title": "Gang Scheduling",
+      "url": "https://slurm.schedmd.com/gang_scheduling.html",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Rolling official guide accessed 2026-10-02",
+      "supports": "GANG time-slicing, suspend/resume, memory residency considerations",
+      "limitations": "Not equivalent to Kubernetes coordinated multi-Pod admission"
+    },
+    {
+      "id": "PLAT-SLURM-SCHED",
+      "title": "Scheduling Configuration Guide",
+      "url": "https://slurm.schedmd.com/sched_config.html",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Rolling official guide accessed 2026-10-02",
+      "supports": "Backfill using resource/time estimates without delaying higher-priority expected starts",
+      "limitations": "Toy arithmetic omits real scheduler limits and configuration details"
+    },
+    {
+      "id": "PLAT-SLURM-PRIORITY",
+      "title": "Multifactor Priority Plugin",
+      "url": "https://slurm.schedmd.com/priority_multifactor.html",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Rolling official guide accessed 2026-10-02",
+      "supports": "Priority factors and accounting-database prerequisite for fair share",
+      "limitations": "Base lab uses basic priority and cannot demonstrate historical fair share"
+    },
+    {
+      "id": "PLAT-SLURM-GRES",
+      "title": "Generic Resource Scheduling",
+      "url": "https://slurm.schedmd.com/gres.html",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Rolling official guide accessed 2026-10-02",
+      "supports": "GRES configuration/detection, GPU exposure and accounting distinctions",
+      "limitations": "No GPU/GRES runtime or physical-device access test executed"
+    },
+    {
+      "id": "PLAT-SLURM-TOPO",
+      "title": "Topology Guide",
+      "url": "https://slurm.schedmd.com/topology.html",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Rolling official guide accessed 2026-10-02",
+      "supports": "Configured topology influences allocation under selected plugins",
+      "limitations": "One-node VM provides no physical switch-aware placement evidence"
+    },
+    {
+      "id": "PLAT-SLURM-ACCOUNTING",
+      "title": "Accounting and Resource Limits",
+      "url": "https://slurm.schedmd.com/accounting.html",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Rolling official guide accessed 2026-10-02",
+      "supports": "SlurmDBD, identities, associations, limits, bounded outage caching",
+      "limitations": "No SlurmDBD deployed; completion file is not equivalent accounting"
+    },
+    {
+      "id": "PLAT-SLURM-SACCT",
+      "title": "sacct reference",
+      "url": "https://slurm.schedmd.com/sacct.html",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Rolling official manual accessed 2026-10-02",
+      "supports": "Job/step fields and configured history source",
+      "limitations": "Field availability/collection must be observed; no fabricated sacct output"
+    },
+    {
+      "id": "PLAT-SLURM-SACCTMGR",
+      "title": "sacctmgr reference",
+      "url": "https://slurm.schedmd.com/sacctmgr.html",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Rolling official manual accessed 2026-10-02",
+      "supports": "Cluster/account/user association administration",
+      "limitations": "Only appropriate against an isolated provisioned database with authorization"
+    },
+    {
+      "id": "PLAT-SLURM-DBD",
+      "title": "slurmdbd.conf reference",
+      "url": "https://slurm.schedmd.com/slurmdbd.conf.html",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Rolling official manual accessed 2026-10-02",
+      "supports": "Database/auth/storage configuration prerequisites",
+      "limitations": "Secure database provisioning must exist before optional accounting exercise"
+    },
+    {
+      "id": "PLAT-SLURM-CGROUP",
+      "title": "Control Group v2 plugin",
+      "url": "https://slurm.schedmd.com/cgroup_v2.html",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Rolling official guide accessed 2026-10-02",
+      "supports": "cgroup v2/systemd integration and migration prerequisites",
+      "limitations": "Example cgroup profile is inactive and untested until a dedicated VM validation"
+    },
+    {
+      "id": "PLAT-SLURM-UPGRADE",
+      "title": "Upgrade Guide",
+      "url": "https://slurm.schedmd.com/upgrades.html",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Rolling official guide accessed 2026-10-02; recheck exact endpoints before change",
+      "supports": "Version-dependent compatibility, backup order, state/database transformations and downgrade limits",
+      "limitations": "No universal future upgrade matrix or performed upgrade claimed"
+    },
+    {
+      "id": "PLAT-NVIDIA-MIG",
+      "title": "MIG Support in Kubernetes",
+      "url": "https://docs.nvidia.com/datacenter/cloud-native/kubernetes/latest/index.html",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Rolling NVIDIA guide accessed 2026-10-02",
+      "supports": "MIG/device-plugin integration is a distinct configured GPU extension",
+      "limitations": "No NVIDIA runtime/hardware extension installed or validated"
+    },
+    {
+      "id": "PLAT-PYTHON-IMAGE",
+      "title": "Docker Official Image: Python",
+      "url": "https://hub.docker.com/_/python",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Registry inspection of python:3.12.7-alpine3.20 on 2026-10-02",
+      "supports": "Multi-platform index resolved by docker buildx imagetools inspect to sha256:5049c050bdc68575a10bcb1885baa0689b6c15152d8a56a7e399fb49f783bf98",
+      "limitations": "Historical image; registry metadata read only; no image runtime pass claimed"
+    },
+    {
+      "id": "PLAT-K8S-CONFIGMAP",
+      "title": "ConfigMaps",
+      "url": "https://v1-34.docs.kubernetes.io/docs/concepts/configuration/configmap/",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Kubernetes 1.34 documentation",
+      "supports": "Non-secret configuration data and volume-file consumption",
+      "limitations": "ConfigMap storage is not a secret-management boundary"
+    },
+    {
+      "id": "PLAT-K8S-TAINT",
+      "title": "Taints and Tolerations",
+      "url": "https://v1-34.docs.kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Kubernetes 1.34 documentation",
+      "supports": "NoSchedule filtering and matching toleration semantics",
+      "limitations": "A toleration does not mandate placement and does not prove physical capacity"
+    }
+  ]
+}

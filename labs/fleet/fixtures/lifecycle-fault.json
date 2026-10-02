@@ -1,0 +1,46 @@
+{
+  "events": [
+    {
+      "event_id": "d1",
+      "expected_generation": 0,
+      "action": "begin_drain"
+    },
+    {
+      "event_id": "d2",
+      "expected_generation": 1,
+      "action": "confirm_empty",
+      "workloads": 0
+    },
+    {
+      "event_id": "r1",
+      "expected_generation": 2,
+      "action": "repair"
+    },
+    {
+      "event_id": "q1",
+      "expected_generation": 3,
+      "action": "qualify"
+    },
+    {
+      "event_id": "q2",
+      "expected_generation": 4,
+      "action": "accept_checks",
+      "check_generation": 4,
+      "checks": {
+        "workload": true,
+        "telemetry": false,
+        "inventory": true
+      }
+    },
+    {
+      "event_id": "p1",
+      "expected_generation": 5,
+      "action": "promote"
+    }
+  ],
+  "expected_final": {
+    "state": "available",
+    "generation": 6
+  },
+  "synthetic": true
+}

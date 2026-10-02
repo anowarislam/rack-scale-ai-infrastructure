@@ -1,0 +1,6 @@
+# Optional hardened VM profile; NOT active in the minimal lab.
+# Requires Slurm built with cgroup v2 support, systemd delegation, and validation.
+CgroupPlugin=cgroup/v2
+ConstrainCores=yes
+ConstrainRAMSpace=yes
+ConstrainDevices=yes

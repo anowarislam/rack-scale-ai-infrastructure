@@ -1,0 +1,46 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: checkpoint
+  namespace: course-platform
+spec:
+  accessModes: [ReadWriteOnce]
+  resources:
+    requests: {storage: 64Mi}
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: checkpoint-recovery
+  namespace: course-platform
+spec:
+  backoffLimit: 2
+  template:
+    spec:
+      restartPolicy: Never
+      serviceAccountName: reader
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1000
+        runAsGroup: 1000
+        fsGroup: 1000
+        seccompProfile: {type: RuntimeDefault}
+      containers:
+        - name: calculate
+          image: python:3.12.7-alpine3.20@sha256:5049c050bdc68575a10bcb1885baa0689b6c15152d8a56a7e399fb49f783bf98
+          command: ["python3", "/course/workload.py", "--directory", "/data/recovery", "--steps", "40", "--fail-after", "8", "--delay", "0.25"]
+          resources:
+            requests: {cpu: 100m, memory: 32Mi}
+            limits: {cpu: 500m, memory: 128Mi}
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities: {drop: ["ALL"]}
+          volumeMounts:
+            - {name: script, mountPath: /course, readOnly: true}
+            - {name: checkpoint, mountPath: /data}
+      volumes:
+        - name: script
+          configMap: {name: course-workload}
+        - name: checkpoint
+          persistentVolumeClaim: {claimName: checkpoint}

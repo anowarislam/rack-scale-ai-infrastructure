@@ -1,0 +1,87 @@
+{
+  "synthetic": true,
+  "name": "Meridian synchronized phase trace",
+  "units": "milliseconds per selected step; phases serial in this synthetic trace",
+  "baseline": [
+    {
+      "rank": 0,
+      "compute_ms": 80,
+      "checkpoint_ms": 0,
+      "collective_ms": 40,
+      "step_ms": 120
+    },
+    {
+      "rank": 1,
+      "compute_ms": 80,
+      "checkpoint_ms": 0,
+      "collective_ms": 40,
+      "step_ms": 120
+    },
+    {
+      "rank": 2,
+      "compute_ms": 80,
+      "checkpoint_ms": 0,
+      "collective_ms": 40,
+      "step_ms": 120
+    },
+    {
+      "rank": 3,
+      "compute_ms": 80,
+      "checkpoint_ms": 0,
+      "collective_ms": 40,
+      "step_ms": 120
+    }
+  ],
+  "regression": [
+    {
+      "rank": 0,
+      "compute_ms": 80,
+      "checkpoint_ms": 0,
+      "collective_ms": 320,
+      "step_ms": 400
+    },
+    {
+      "rank": 1,
+      "compute_ms": 80,
+      "checkpoint_ms": 280,
+      "collective_ms": 40,
+      "step_ms": 400
+    },
+    {
+      "rank": 2,
+      "compute_ms": 80,
+      "checkpoint_ms": 0,
+      "collective_ms": 320,
+      "step_ms": 400
+    },
+    {
+      "rank": 3,
+      "compute_ms": 80,
+      "checkpoint_ms": 0,
+      "collective_ms": 320,
+      "step_ms": 400
+    }
+  ],
+  "other_observations": {
+    "data_hash": "SYNTH-DATA-V1",
+    "model_hash": "SYNTH-MODEL-V1",
+    "output_check": "passes",
+    "switch_warning": {
+      "switch": "SYNTH-SW2",
+      "port": "P9",
+      "message": "link warning",
+      "observed_at": "T-20m"
+    },
+    "recorded_workload_path": [
+      {
+        "switch": "SYNTH-SW1",
+        "ports": [
+          "P1",
+          "P2",
+          "P3",
+          "P4"
+        ]
+      }
+    ]
+  }
+}

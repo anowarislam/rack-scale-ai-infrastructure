@@ -1,0 +1,31 @@
+{
+  "now_s": 1000,
+  "max_age_s": 30,
+  "inventory": [
+    {
+      "asset_id": "node-a",
+      "serial": "SYNTH-A",
+      "boot_id": "boot-a2"
+    },
+    {
+      "asset_id": "node-b",
+      "serial": "SYNTH-B",
+      "boot_id": "boot-b1"
+    }
+  ],
+  "readings": [
+    {
+      "asset_id": "node-a",
+      "serial": "SYNTH-A",
+      "boot_id": "boot-a1",
+      "sequence": 8,
+      "event_time_s": 970,
+      "observed_time_s": 998,
+      "clock_offset_s": 40,
+      "clock_uncertainty_s": 1,
+      "unit": "C",
+      "value": 55
+    }
+  ],
+  "synthetic": true
+}

@@ -1,0 +1,43 @@
+{
+  "now_s": 1000,
+  "max_age_s": 30,
+  "inventory": [
+    {
+      "asset_id": "node-a",
+      "serial": "SYNTH-A",
+      "boot_id": "boot-a2"
+    },
+    {
+      "asset_id": "node-b",
+      "serial": "SYNTH-B",
+      "boot_id": "boot-b1"
+    }
+  ],
+  "readings": [
+    {
+      "asset_id": "node-a",
+      "serial": "SYNTH-A",
+      "boot_id": "boot-a2",
+      "sequence": 8,
+      "event_time_s": 990,
+      "observed_time_s": 992,
+      "clock_offset_s": 0,
+      "clock_uncertainty_s": 1,
+      "unit": "C",
+      "value": 55
+    },
+    {
+      "asset_id": "node-b",
+      "serial": "SYNTH-B",
+      "boot_id": "boot-b1",
+      "sequence": 8,
+      "event_time_s": 990,
+      "observed_time_s": 992,
+      "clock_offset_s": 0,
+      "clock_uncertainty_s": 1,
+      "unit": "mC",
+      "value": 55000
+    }
+  ],
+  "synthetic": true
+}

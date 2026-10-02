@@ -1,0 +1,55 @@
+Command: python3 -m unittest discover -s labs/platforms/l0 -p 'test*.py' -v
+Date: 2026-10-02 UTC
+Interpreter: Python 3.11.11
+Exit status: 0
+
+test_changed_target_is_rejected (test_queue_recovery.CheckpointTests.test_changed_target_is_rejected) ... {"event": "start", "resumed_from": 0, "target": 12}
+{"event": "checkpoint", "schema": 1, "target": 12, "completed": 1, "total": 1}
+{"event": "checkpoint", "schema": 1, "target": 12, "completed": 2, "total": 5}
+{"event": "checkpoint", "schema": 1, "target": 12, "completed": 3, "total": 14}
+{"event": "checkpoint", "schema": 1, "target": 12, "completed": 4, "total": 30}
+{"event": "checkpoint", "schema": 1, "target": 12, "completed": 5, "total": 55}
+{"event": "injected_failure", "exit_code": 75}
+ok
+test_corrupt_checkpoint_is_rejected (test_queue_recovery.CheckpointTests.test_corrupt_checkpoint_is_rejected) ... ok
+test_resume_matches_uninterrupted_result (test_queue_recovery.CheckpointTests.test_resume_matches_uninterrupted_result) ... {"event": "start", "resumed_from": 0, "target": 12}
+{"event": "checkpoint", "schema": 1, "target": 12, "completed": 1, "total": 1}
+{"event": "checkpoint", "schema": 1, "target": 12, "completed": 2, "total": 5}
+{"event": "checkpoint", "schema": 1, "target": 12, "completed": 3, "total": 14}
+{"event": "checkpoint", "schema": 1, "target": 12, "completed": 4, "total": 30}
+{"event": "checkpoint", "schema": 1, "target": 12, "completed": 5, "total": 55}
+{"event": "injected_failure", "exit_code": 75}
+{"event": "start", "resumed_from": 5, "target": 12}
+{"event": "checkpoint", "completed": 6, "schema": 1, "target": 12, "total": 91}
+{"event": "checkpoint", "completed": 7, "schema": 1, "target": 12, "total": 140}
+{"event": "checkpoint", "completed": 8, "schema": 1, "target": 12, "total": 204}
+{"event": "checkpoint", "completed": 9, "schema": 1, "target": 12, "total": 285}
+{"event": "checkpoint", "completed": 10, "schema": 1, "target": 12, "total": 385}
+{"event": "checkpoint", "completed": 11, "schema": 1, "target": 12, "total": 506}
+{"event": "checkpoint", "completed": 12, "schema": 1, "target": 12, "total": 650}
+{"event": "complete", "resumed_from": 5, "completed": 12, "total": 650, "correct": true}
+{"event": "start", "resumed_from": 0, "target": 12}
+{"event": "checkpoint", "schema": 1, "target": 12, "completed": 1, "total": 1}
+{"event": "checkpoint", "schema": 1, "target": 12, "completed": 2, "total": 5}
+{"event": "checkpoint", "schema": 1, "target": 12, "completed": 3, "total": 14}
+{"event": "checkpoint", "schema": 1, "target": 12, "completed": 4, "total": 30}
+{"event": "checkpoint", "schema": 1, "target": 12, "completed": 5, "total": 55}
+{"event": "checkpoint", "schema": 1, "target": 12, "completed": 6, "total": 91}
+{"event": "checkpoint", "schema": 1, "target": 12, "completed": 7, "total": 140}
+{"event": "checkpoint", "schema": 1, "target": 12, "completed": 8, "total": 204}
+{"event": "checkpoint", "schema": 1, "target": 12, "completed": 9, "total": 285}
+{"event": "checkpoint", "schema": 1, "target": 12, "completed": 10, "total": 385}
+{"event": "checkpoint", "schema": 1, "target": 12, "completed": 11, "total": 506}
+{"event": "checkpoint", "schema": 1, "target": 12, "completed": 12, "total": 650}
+{"event": "complete", "resumed_from": 0, "completed": 12, "total": 650, "correct": true}
+ok
+test_fragmented_total_does_not_imply_feasibility (test_queue_recovery.PlacementTests.test_fragmented_total_does_not_imply_feasibility) ... ok
+test_invalid_request (test_queue_recovery.PlacementTests.test_invalid_request) ... ok
+test_no_overcommit (test_queue_recovery.PlacementTests.test_no_overcommit) ... ok
+test_pending_does_not_reserve_partial_resources (test_queue_recovery.PlacementTests.test_pending_does_not_reserve_partial_resources) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.008s
+
+OK
+

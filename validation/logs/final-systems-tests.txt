@@ -1,0 +1,29 @@
+Command: python3 -m unittest discover -s labs/systems -p 'test*.py' -v
+Date: 2026-10-02 UTC
+Interpreter: Python 3.11.11
+Exit status: 0
+
+test_backend_change_rejected (test_lab.Checkpoints.test_backend_change_rejected) ... ok
+test_bounded_steps_and_no_overwrite (test_lab.Checkpoints.test_bounded_steps_and_no_overwrite) ... ok
+test_checksum_detects_tampering (test_lab.Checkpoints.test_checksum_detects_tampering) ... ok
+test_interrupted_resume_matches_uninterrupted (test_lab.Checkpoints.test_interrupted_resume_matches_uninterrupted) ... ok
+test_manifest_path_escape_rejected (test_lab.Checkpoints.test_manifest_path_escape_rejected) ... ok
+test_unpublished_generation_is_ignored (test_lab.Checkpoints.test_unpublished_generation_is_ignored) ... ok
+test_boolean_rejected_as_integer (test_lab.Models.test_boolean_rejected_as_integer) ... ok
+test_broken_and_healthy_controls (test_lab.Models.test_broken_and_healthy_controls) ... ok
+test_collective_fix_does_not_accept_partial_checkpoint (test_lab.Models.test_collective_fix_does_not_accept_partial_checkpoint) ... ok
+test_fresh_collection_does_not_correct_clock_or_privilege (test_lab.Models.test_fresh_collection_does_not_correct_clock_or_privilege) ... ok
+test_inventory_partial_fix_does_not_pass (test_lab.Models.test_inventory_partial_fix_does_not_pass) ... ok
+test_memory_boundary (test_lab.Models.test_memory_boundary) ... ok
+test_queue_capacity_and_tail (test_lab.Models.test_queue_capacity_and_tail) ... ok
+test_cli_failure_recovery_and_reset (test_lab.Workspaces.test_cli_failure_recovery_and_reset) ... ok
+test_fixture_drift_rejected (test_lab.Workspaces.test_fixture_drift_rejected) ... ok
+test_invalid_config_is_not_written (test_lab.Workspaces.test_invalid_config_is_not_written) ... ok
+test_refuse_external_path_and_root (test_lab.Workspaces.test_refuse_external_path_and_root) ... ok
+test_refuse_state_symlink (test_lab.Workspaces.test_refuse_state_symlink) ... ok
+test_reinitialization_preserves_existing (test_lab.Workspaces.test_reinitialization_preserves_existing) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.034s
+
+OK

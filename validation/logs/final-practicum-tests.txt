@@ -1,0 +1,15 @@
+Command: python3 -m unittest discover -s practicum -p 'test*.py' -v
+Date: 2026-10-02 UTC
+Interpreter: Python 3.11.11
+Exit status: 0
+
+test_baseline_fault_recovery_reset_real_checkpoint_application (test_l2_batch.BatchRecordTests.test_baseline_fault_recovery_reset_real_checkpoint_application) ... ok
+test_duplicate_phase_preserves_original_attempt (test_l2_batch.BatchRecordTests.test_duplicate_phase_preserves_original_attempt) ... ok
+test_existing_writer_blocks_without_starting_application (test_l2_batch.BatchRecordTests.test_existing_writer_blocks_without_starting_application) ... ok
+test_incorrect_final_result_is_rejected (test_l2_batch.BatchRecordTests.test_incorrect_final_result_is_rejected) ... ok
+test_same_host_aliases_are_rejected (test_l2_batch.BatchRecordTests.test_same_host_aliases_are_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.822s
+
+OK

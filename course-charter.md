@@ -1,5 +1,7 @@
 # Rack-Scale AI Infrastructure Course — Design Charter
 
+> Historical design baseline. On 2026-10-02 the user authorized actual course delivery. The planning-only boundary and planning-artifact sequence below are superseded by [DEC-0005](decisions/0005-deliver-the-course.md). The learning architecture, safety boundaries, and claim limits remain applicable. Start with [README.md](README.md) for the delivered course and [DELIVERY-STATUS.md](DELIVERY-STATUS.md) for verification status.
+
 - Status: approved design baseline
 - Design date: 2026-07-09
 - Delivery boundary: private planning artifacts only

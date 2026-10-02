@@ -1,0 +1,158 @@
+{
+  "scope": "Fleet curriculum, specialties, and original synthetic practicum; no private stack claims",
+  "sources": [
+    {
+      "id": "FLEET-01",
+      "title": "OpenTelemetry Logs Data Model",
+      "url": "https://opentelemetry.io/docs/specs/otel/logs/data-model/",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Live specification page accessed 2026-10-02; timestamp fields marked stable",
+      "supports": "Distinct source Timestamp and collection ObservedTimestamp semantics",
+      "limitations": "Does not guarantee clock synchronization or establish sensor accuracy"
+    },
+    {
+      "id": "FLEET-02",
+      "title": "RFC 5905 NTPv4 Protocol and Algorithms Specification",
+      "url": "https://datatracker.ietf.org/doc/html/rfc5905",
+      "accessed_at": "2026-10-02",
+      "version_scope": "RFC 5905, June 2010, section 8",
+      "supports": "Four-timestamp offset and delay calculation",
+      "limitations": "Not a deployment-specific clock accuracy guarantee; RFC editor endpoint timed out, IETF copy verified"
+    },
+    {
+      "id": "FLEET-03",
+      "title": "NIST Constant repair rate model",
+      "url": "https://www.itl.nist.gov/div898/handbook/apr/section4/apr451.htm",
+      "accessed_at": "2026-10-02",
+      "version_scope": "NIST SEMATECH handbook section 8.4.5.1, accessed 2026-10-02",
+      "supports": "Exposure-normalized rate and fixed-time confidence intervals; zero-event bound",
+      "limitations": "Conditional on stated exponential/HPP assumptions; not evidence of hardware rate stationarity"
+    },
+    {
+      "id": "FLEET-04",
+      "title": "NIST Censoring",
+      "url": "https://www.itl.nist.gov/div898/handbook/apr/section1/apr131.htm",
+      "accessed_at": "2026-10-02",
+      "version_scope": "NIST SEMATECH handbook section 8.1.3.1",
+      "supports": "Right, interval, and other censored observations",
+      "limitations": "Does not make informative dropout ignorable"
+    },
+    {
+      "id": "FLEET-05",
+      "title": "NIST Kaplan-Meier procedure",
+      "url": "https://www.itl.nist.gov/div898/handbook/apr/section2/apr215.htm",
+      "accessed_at": "2026-10-02",
+      "version_scope": "NIST SEMATECH handbook section 8.2.1.5",
+      "supports": "Risk sets and product-limit survival estimates",
+      "limitations": "No fitted hardware survival curve is supplied by the course"
+    },
+    {
+      "id": "FLEET-06",
+      "title": "Google SRE Monitoring Distributed Systems",
+      "url": "https://sre.google/sre-book/monitoring-distributed-systems/",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Public SRE book chapter 6, accessed 2026-10-02",
+      "supports": "Black-box and white-box monitoring distinction",
+      "limitations": "Published experience, not current private infrastructure or universal detector policy"
+    },
+    {
+      "id": "FLEET-07",
+      "title": "Google SRE Managing Incidents",
+      "url": "https://sre.google/sre-book/managing-incidents/",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Public SRE book chapter 14",
+      "supports": "Command, operations, communication, planning, live state and handoff",
+      "limitations": "Course scenarios are original synthetic exercises, not reproductions of Google incidents"
+    },
+    {
+      "id": "FLEET-08",
+      "title": "Google SRE Handling Overload",
+      "url": "https://sre.google/sre-book/handling-overload/",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Public SRE book chapter 21",
+      "supports": "Resource cost varies by request; capacity models need suitable units",
+      "limitations": "Does not prescribe GPU headroom percentages"
+    },
+    {
+      "id": "FLEET-09",
+      "title": "Google SRE Workbook Canarying Releases",
+      "url": "https://sre.google/workbook/canarying-releases/",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Public SRE workbook chapter 16",
+      "supports": "Canary/control separation, time confounding, shared-dependency contamination",
+      "limitations": "No prescribed universal sample size or proof of causality for course examples"
+    },
+    {
+      "id": "FLEET-10",
+      "title": "Google SRE Workbook Alerting on SLOs",
+      "url": "https://sre.google/workbook/alerting-on-slos/",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Public SRE workbook chapter 5",
+      "supports": "Precision, recall, detection and reset time are separate alert properties",
+      "limitations": "Synthetic base-rate examples are independently constructed, not industry distributions"
+    },
+    {
+      "id": "FLEET-11",
+      "title": "DMTF Redfish Specification",
+      "url": "https://www.dmtf.org/sites/default/files/standards/documents/DSP0266_1.20.2.html",
+      "accessed_at": "2026-10-02",
+      "version_scope": "DSP0266 version 1.20.2; deliberately version-pinned",
+      "supports": "ETag conditional changes and asynchronous task completion semantics",
+      "limitations": "Device-specific implementation and supported hardware/firmware combinations not tested"
+    },
+    {
+      "id": "FLEET-12",
+      "title": "AWS Making retries safe with idempotent APIs",
+      "url": "https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/",
+      "accessed_at": "2026-10-02",
+      "version_scope": "AWS Builders Library article accessed 2026-10-02",
+      "supports": "Caller request identifiers, same-ID parameter mismatch, atomic intent/mutation record",
+      "limitations": "The course simulator has no production durability or distributed execution"
+    },
+    {
+      "id": "FLEET-13",
+      "title": "AWS OPS07-BP02 Consistent operational readiness review",
+      "url": "https://docs.aws.amazon.com/wellarchitected/2024-06-27/framework/ops_ready_to_support_const_orr.html",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Versioned 2024-06-27 documentation URL, accessed 2026-10-02",
+      "supports": "ORR as process and checklist informed by prior operational lessons",
+      "limitations": "Course ORR criteria are original and not AWS certification; earlier guessed latest URL failed"
+    },
+    {
+      "id": "FLEET-14",
+      "title": "Kubernetes Resource Quotas",
+      "url": "https://kubernetes.io/docs/concepts/policy/resource-quotas/",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Live upstream documentation accessed 2026-10-02; learner must match G2 cluster version",
+      "supports": "Namespace resource quotas and extended-resource requests",
+      "limitations": "No claim that quota reserves topology or that uncreated Pods are scheduler-pending"
+    },
+    {
+      "id": "FLEET-15",
+      "title": "Slurm Resource Limits",
+      "url": "https://slurm.schedmd.com/resource_limits.html",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Live SchedMD documentation accessed 2026-10-02; learner must match G2 Slurm version",
+      "supports": "Association/QOS limit scope and interactions",
+      "limitations": "No installed Slurm configuration or accounting enforcement was tested by this source review"
+    },
+    {
+      "id": "FLEET-16",
+      "title": "Slurm 25.05.3 srun command manual",
+      "url": "https://raw.githubusercontent.com/SchedMD/slurm/slurm-25-05-3-1/doc/man/man1/srun.1",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Version-pinned Slurm tag slurm-25-05-3-1, accessed 2026-10-02; owner rechecks options if installed version differs",
+      "supports": "Two-node/task placement, synchronous task exit propagation, kill-on-bad-exit and wait semantics",
+      "limitations": "Manual review and local recorder tests do not prove native placement, shared-filesystem behavior, host independence, or Slurm execution"
+    },
+    {
+      "id": "FLEET-17",
+      "title": "Slurm 25.05.3 task environment setup source",
+      "url": "https://raw.githubusercontent.com/SchedMD/slurm/slurm-25-05-3-1/src/slurmd/slurmstepd/task.c",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Version-pinned slurm-25-05-3-1 task environment setup",
+      "supports": "SLURMD_NODENAME is supplied to the launched task environment",
+      "limitations": "A captured environment variable is an identity observation to reconcile with native accounting and owner inventory, not proof of independent host provisioning"
+    }
+  ]
+}

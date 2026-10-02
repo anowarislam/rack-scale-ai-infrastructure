@@ -1,2 +1,7 @@
 .worktrees/
 .superpowers/
+.cache/
+learner-work/
+__pycache__/
+*.pyc
+.DS_Store

@@ -1,0 +1,785 @@
+{
+  "schema_version": 1,
+  "delivery_date": "2026-10-02",
+  "priority": "Self-contained theory and worked examples; labs reinforce understanding.",
+  "entrypoint": "README.md",
+  "bridge": "curriculum/00-bridge.md",
+  "calendar": "CALENDAR.md",
+  "assessment": "assessments/gates.md",
+  "schedule": {
+    "scheduled_weeks": 96,
+    "build_apply": 70,
+    "remediation": 18,
+    "defense_transfer": 8,
+    "unscheduled_break_weeks": 8,
+    "hours_per_week": [
+      8,
+      10
+    ],
+    "bridge_hours": "Additional; diagnostic-dependent."
+  },
+  "months": [
+    {
+      "month": 1,
+      "title": "System map and safe experiments",
+      "lessons": [
+        "curriculum/01-system-map.md"
+      ],
+      "gate": "G1",
+      "exercise": "G1-E01",
+      "outcomes": [
+        "G1-O01",
+        "G1-O02"
+      ],
+      "weeks": [
+        {
+          "week": 1,
+          "type": "build_apply"
+        },
+        {
+          "week": 2,
+          "type": "build_apply"
+        },
+        {
+          "week": 3,
+          "type": "build_apply"
+        },
+        {
+          "week": 4,
+          "type": "remediation"
+        }
+      ]
+    },
+    {
+      "month": 2,
+      "title": "Server topology and control",
+      "lessons": [
+        "curriculum/02-server-control.md"
+      ],
+      "gate": "G1",
+      "exercise": "G1-E02",
+      "outcomes": [
+        "G1-O03",
+        "G1-O04"
+      ],
+      "weeks": [
+        {
+          "week": 5,
+          "type": "build_apply"
+        },
+        {
+          "week": 6,
+          "type": "build_apply"
+        },
+        {
+          "week": 7,
+          "type": "build_apply"
+        },
+        {
+          "week": 8,
+          "type": "remediation"
+        }
+      ]
+    },
+    {
+      "month": 3,
+      "title": "GPU and runtime boundaries",
+      "lessons": [
+        "curriculum/03-gpu-runtime.md"
+      ],
+      "gate": "G1",
+      "exercise": "G1-E03",
+      "outcomes": [
+        "G1-O05",
+        "G1-O06"
+      ],
+      "weeks": [
+        {
+          "week": 9,
+          "type": "build_apply"
+        },
+        {
+          "week": 10,
+          "type": "build_apply"
+        },
+        {
+          "week": 11,
+          "type": "build_apply"
+        },
+        {
+          "week": 12,
+          "type": "remediation"
+        }
+      ]
+    },
+    {
+      "month": 4,
+      "title": "Fabric, storage, and checkpoints",
+      "lessons": [
+        "curriculum/04-fabric-storage.md"
+      ],
+      "gate": "G1",
+      "exercise": "G1-E04",
+      "outcomes": [
+        "G1-O07",
+        "G1-O08"
+      ],
+      "weeks": [
+        {
+          "week": 13,
+          "type": "build_apply"
+        },
+        {
+          "week": 14,
+          "type": "build_apply"
+        },
+        {
+          "week": 15,
+          "type": "build_apply"
+        },
+        {
+          "week": 16,
+          "type": "remediation"
+        }
+      ]
+    },
+    {
+      "month": 5,
+      "title": "Power, telemetry, and security",
+      "lessons": [
+        "curriculum/05-power-telemetry-security.md"
+      ],
+      "gate": "G1",
+      "exercise": "G1-E05",
+      "outcomes": [
+        "G1-O09",
+        "G1-O10"
+      ],
+      "weeks": [
+        {
+          "week": 17,
+          "type": "build_apply"
+        },
+        {
+          "week": 18,
+          "type": "build_apply"
+        },
+        {
+          "week": 19,
+          "type": "build_apply"
+        },
+        {
+          "week": 20,
+          "type": "remediation"
+        }
+      ]
+    },
+    {
+      "month": 6,
+      "title": "Integrated workloads",
+      "lessons": [
+        "curriculum/06-workloads.md"
+      ],
+      "gate": "G1",
+      "exercise": "G1-E06",
+      "outcomes": [
+        "G1-O11",
+        "G1-O12"
+      ],
+      "weeks": [
+        {
+          "week": 21,
+          "type": "build_apply"
+        },
+        {
+          "week": 22,
+          "type": "build_apply"
+        },
+        {
+          "week": 23,
+          "type": "build_apply"
+        },
+        {
+          "week": 24,
+          "type": "remediation"
+        }
+      ]
+    },
+    {
+      "month": 7,
+      "title": "Shared workload contract",
+      "lessons": [
+        "curriculum/07-workload-contract.md"
+      ],
+      "gate": "G2",
+      "exercise": "G2-E01",
+      "outcomes": [
+        "G2-O01",
+        "G2-O02"
+      ],
+      "weeks": [
+        {
+          "week": 25,
+          "type": "build_apply"
+        },
+        {
+          "week": 26,
+          "type": "build_apply"
+        },
+        {
+          "week": 27,
+          "type": "build_apply"
+        },
+        {
+          "week": 28,
+          "type": "remediation"
+        }
+      ]
+    },
+    {
+      "month": 8,
+      "title": "Reference environment",
+      "lessons": [
+        "tracks/kubernetes/08-reference-environment.md",
+        "tracks/slurm/08-reference-environment.md"
+      ],
+      "gate": "G2",
+      "exercise": "G2-E02",
+      "outcomes": [
+        "G2-O03",
+        "G2-O04"
+      ],
+      "weeks": [
+        {
+          "week": 29,
+          "type": "build_apply"
+        },
+        {
+          "week": 30,
+          "type": "build_apply"
+        },
+        {
+          "week": 31,
+          "type": "build_apply"
+        },
+        {
+          "week": 32,
+          "type": "remediation"
+        }
+      ]
+    },
+    {
+      "month": 9,
+      "title": "Placement and fairness",
+      "lessons": [
+        "tracks/kubernetes/09-placement-and-fairness.md",
+        "tracks/slurm/09-placement-and-fairness.md"
+      ],
+      "gate": "G2",
+      "exercise": "G2-E03",
+      "outcomes": [
+        "G2-O05",
+        "G2-O06"
+      ],
+      "weeks": [
+        {
+          "week": 33,
+          "type": "build_apply"
+        },
+        {
+          "week": 34,
+          "type": "build_apply"
+        },
+        {
+          "week": 35,
+          "type": "build_apply"
+        },
+        {
+          "week": 36,
+          "type": "remediation"
+        }
+      ]
+    },
+    {
+      "month": 10,
+      "title": "Workload recovery",
+      "lessons": [
+        "tracks/kubernetes/10-workload-recovery.md",
+        "tracks/slurm/10-workload-recovery.md"
+      ],
+      "gate": "G2",
+      "exercise": "G2-E04",
+      "outcomes": [
+        "G2-O07",
+        "G2-O08"
+      ],
+      "weeks": [
+        {
+          "week": 37,
+          "type": "build_apply"
+        },
+        {
+          "week": 38,
+          "type": "build_apply"
+        },
+        {
+          "week": 39,
+          "type": "build_apply"
+        },
+        {
+          "week": 40,
+          "type": "remediation"
+        }
+      ]
+    },
+    {
+      "month": 11,
+      "title": "Platform operability",
+      "lessons": [
+        "tracks/kubernetes/11-operability.md",
+        "tracks/slurm/11-operability.md"
+      ],
+      "gate": "G2",
+      "exercise": "G2-E05",
+      "outcomes": [
+        "G2-O09",
+        "G2-O10"
+      ],
+      "weeks": [
+        {
+          "week": 41,
+          "type": "build_apply"
+        },
+        {
+          "week": 42,
+          "type": "build_apply"
+        },
+        {
+          "week": 43,
+          "type": "build_apply"
+        },
+        {
+          "week": 44,
+          "type": "remediation"
+        }
+      ]
+    },
+    {
+      "month": 12,
+      "title": "Integration and comparison",
+      "lessons": [
+        "tracks/kubernetes/12-integration-and-comparison.md",
+        "tracks/slurm/12-integration-and-comparison.md"
+      ],
+      "gate": "G2",
+      "exercise": "G2-E06",
+      "outcomes": [
+        "G2-O11",
+        "G2-O12"
+      ],
+      "weeks": [
+        {
+          "week": 45,
+          "type": "build_apply"
+        },
+        {
+          "week": 46,
+          "type": "build_apply"
+        },
+        {
+          "week": 47,
+          "type": "build_apply"
+        },
+        {
+          "week": 48,
+          "type": "remediation"
+        }
+      ]
+    },
+    {
+      "month": 13,
+      "title": "Fleet truth and time",
+      "lessons": [
+        "curriculum/13-fleet-truth.md"
+      ],
+      "gate": "G3",
+      "exercise": "G3-E01",
+      "outcomes": [
+        "G3-O01",
+        "G3-O02"
+      ],
+      "weeks": [
+        {
+          "week": 49,
+          "type": "build_apply"
+        },
+        {
+          "week": 50,
+          "type": "build_apply"
+        },
+        {
+          "week": 51,
+          "type": "build_apply"
+        },
+        {
+          "week": 52,
+          "type": "remediation"
+        }
+      ]
+    },
+    {
+      "month": 14,
+      "title": "Reliability and uncertainty",
+      "lessons": [
+        "curriculum/14-reliability.md"
+      ],
+      "gate": "G3",
+      "exercise": "G3-E02",
+      "outcomes": [
+        "G3-O03",
+        "G3-O04"
+      ],
+      "weeks": [
+        {
+          "week": 53,
+          "type": "build_apply"
+        },
+        {
+          "week": 54,
+          "type": "build_apply"
+        },
+        {
+          "week": 55,
+          "type": "build_apply"
+        },
+        {
+          "week": 56,
+          "type": "remediation"
+        }
+      ]
+    },
+    {
+      "month": 15,
+      "title": "Incidents and change",
+      "lessons": [
+        "curriculum/15-incidents-and-change.md"
+      ],
+      "gate": "G3",
+      "exercise": "G3-E03",
+      "outcomes": [
+        "G3-O05",
+        "G3-O06"
+      ],
+      "weeks": [
+        {
+          "week": 57,
+          "type": "build_apply"
+        },
+        {
+          "week": 58,
+          "type": "build_apply"
+        },
+        {
+          "week": 59,
+          "type": "build_apply"
+        },
+        {
+          "week": 60,
+          "type": "remediation"
+        }
+      ]
+    },
+    {
+      "month": 16,
+      "title": "Lifecycle automation",
+      "lessons": [
+        "curriculum/16-lifecycle-automation.md"
+      ],
+      "gate": "G3",
+      "exercise": "G3-E04",
+      "outcomes": [
+        "G3-O07",
+        "G3-O08"
+      ],
+      "weeks": [
+        {
+          "week": 61,
+          "type": "build_apply"
+        },
+        {
+          "week": 62,
+          "type": "build_apply"
+        },
+        {
+          "week": 63,
+          "type": "build_apply"
+        },
+        {
+          "week": 64,
+          "type": "remediation"
+        }
+      ]
+    },
+    {
+      "month": 17,
+      "title": "Capacity and readiness",
+      "lessons": [
+        "curriculum/17-capacity-and-readiness.md"
+      ],
+      "gate": "G3",
+      "exercise": "G3-E05",
+      "outcomes": [
+        "G3-O09",
+        "G3-O10"
+      ],
+      "weeks": [
+        {
+          "week": 65,
+          "type": "build_apply"
+        },
+        {
+          "week": 66,
+          "type": "build_apply"
+        },
+        {
+          "week": 67,
+          "type": "build_apply"
+        },
+        {
+          "week": 68,
+          "type": "remediation"
+        }
+      ]
+    },
+    {
+      "month": 18,
+      "title": "Specialty integration",
+      "lessons": [
+        "curriculum/18-specialty-integration.md"
+      ],
+      "gate": "G3",
+      "exercise": "G3-E06",
+      "outcomes": [
+        "G3-O11",
+        "G3-O12"
+      ],
+      "weeks": [
+        {
+          "week": 69,
+          "type": "build_apply"
+        },
+        {
+          "week": 70,
+          "type": "build_apply"
+        },
+        {
+          "week": 71,
+          "type": "build_apply"
+        },
+        {
+          "week": 72,
+          "type": "remediation"
+        }
+      ]
+    },
+    {
+      "month": 19,
+      "title": "Inherit and baseline",
+      "lessons": [
+        "practicum/19-inherit.md"
+      ],
+      "gate": "G4",
+      "exercise": "G4-E01",
+      "outcomes": [
+        "G4-O01",
+        "G4-O02"
+      ],
+      "weeks": [
+        {
+          "week": 73,
+          "type": "build_apply"
+        },
+        {
+          "week": 74,
+          "type": "build_apply"
+        },
+        {
+          "week": 75,
+          "type": "build_apply"
+        },
+        {
+          "week": 76,
+          "type": "build_apply"
+        }
+      ]
+    },
+    {
+      "month": 20,
+      "title": "Cross-layer performance",
+      "lessons": [
+        "practicum/20-performance.md"
+      ],
+      "gate": "G4",
+      "exercise": "G4-E02",
+      "outcomes": [
+        "G4-O03",
+        "G4-O04"
+      ],
+      "weeks": [
+        {
+          "week": 77,
+          "type": "build_apply"
+        },
+        {
+          "week": 78,
+          "type": "build_apply"
+        },
+        {
+          "week": 79,
+          "type": "build_apply"
+        },
+        {
+          "week": 80,
+          "type": "build_apply"
+        }
+      ]
+    },
+    {
+      "month": 21,
+      "title": "Compound recovery",
+      "lessons": [
+        "practicum/21-recovery.md"
+      ],
+      "gate": "G4",
+      "exercise": "G4-E03",
+      "outcomes": [
+        "G4-O05",
+        "G4-O06"
+      ],
+      "weeks": [
+        {
+          "week": 81,
+          "type": "build_apply"
+        },
+        {
+          "week": 82,
+          "type": "build_apply"
+        },
+        {
+          "week": 83,
+          "type": "build_apply"
+        },
+        {
+          "week": 84,
+          "type": "build_apply"
+        }
+      ]
+    },
+    {
+      "month": 22,
+      "title": "Rack readiness",
+      "lessons": [
+        "practicum/22-rack-readiness.md"
+      ],
+      "gate": "G4",
+      "exercise": "G4-E04",
+      "outcomes": [
+        "G4-O07",
+        "G4-O08"
+      ],
+      "weeks": [
+        {
+          "week": 85,
+          "type": "build_apply"
+        },
+        {
+          "week": 86,
+          "type": "build_apply"
+        },
+        {
+          "week": 87,
+          "type": "build_apply"
+        },
+        {
+          "week": 88,
+          "type": "build_apply"
+        }
+      ]
+    },
+    {
+      "month": 23,
+      "title": "Portfolio decision",
+      "lessons": [
+        "practicum/23-portfolio.md"
+      ],
+      "gate": "G4",
+      "exercise": "G4-E05",
+      "outcomes": [
+        "G4-O09",
+        "G4-O10"
+      ],
+      "weeks": [
+        {
+          "week": 89,
+          "type": "defense_transfer"
+        },
+        {
+          "week": 90,
+          "type": "defense_transfer"
+        },
+        {
+          "week": 91,
+          "type": "defense_transfer"
+        },
+        {
+          "week": 92,
+          "type": "defense_transfer"
+        }
+      ]
+    },
+    {
+      "month": 24,
+      "title": "Defense and transfer",
+      "lessons": [
+        "practicum/24-defense.md"
+      ],
+      "gate": "G4",
+      "exercise": "G4-E06",
+      "outcomes": [
+        "G4-O11",
+        "G4-O12"
+      ],
+      "weeks": [
+        {
+          "week": 93,
+          "type": "defense_transfer"
+        },
+        {
+          "week": 94,
+          "type": "defense_transfer"
+        },
+        {
+          "week": 95,
+          "type": "defense_transfer"
+        },
+        {
+          "week": 96,
+          "type": "defense_transfer"
+        }
+      ]
+    }
+  ],
+  "specialties": [
+    "specialties/rack-lifecycle.md",
+    "specialties/performance.md",
+    "specialties/workload-platform.md",
+    "specialties/fleet-automation.md"
+  ],
+  "capstones": "practicum/capstones",
+  "source_ledgers": [
+    "evidence/systems-sources.json",
+    "evidence/platform-sources.json",
+    "evidence/fleet-sources.json"
+  ],
+  "validation": "validation/RESULTS.md"
+}

@@ -1,0 +1,17 @@
+L0 MOCK shell validation; no Slurm service contacted.
+Date: 2026-10-02 UTC
+Functions extracted verbatim from l2-recovery-runbook.md.
+/bin/bash inside_allocation: exit 0
+/bin/bash existing_evidence: exit 0
+/bin/bash failed_capture: exit 0
+/bin/bash invalid_phase: exit 0
+/bin/bash missing_case: exit 0
+/bin/bash healthy_then_duplicate: exit 0
+/bin/bash fault_exit_preserved: exit 0
+/bin/zsh inside_allocation: exit 0
+/bin/zsh existing_evidence: exit 0
+/bin/zsh failed_capture: exit 0
+/bin/zsh invalid_phase: exit 0
+/bin/zsh missing_case: exit 0
+/bin/zsh healthy_then_duplicate: exit 0
+/bin/zsh fault_exit_preserved: exit 0

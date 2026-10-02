@@ -1,5 +1,7 @@
 # Rack-Scale AI Infrastructure Planning Package Implementation Plan
 
+> Historical plan, superseded for delivery on 2026-10-02 by [DEC-0005](../../../decisions/0005-deliver-the-course.md). Its prohibition on chapters and executable labs no longer applies. Do not execute this planning package as a prerequisite to the delivered course. See [README.md](../../../README.md) and [DELIVERY-STATUS.md](../../../DELIVERY-STATUS.md).
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (- [ ]) syntax for tracking.
 
 **Goal:** Produce the complete private planning package defined by course-charter.md without creating course chapters, executable labs, deployment manifests, or infrastructure.

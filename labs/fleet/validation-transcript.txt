@@ -1,0 +1,434 @@
+$ /Users/anowarislam/.pyenv/versions/3.11.11/bin/python3 labs/fleet/fleet_lab.py signal labs/fleet/fixtures/signal-fault.json
+{
+  "status": "FAIL",
+  "issues": [
+    "old boot: node-a",
+    "stale source event: node-a",
+    "missing telemetry: node-b"
+  ],
+  "inventory_count": 2,
+  "observed_count": 1,
+  "claim": "L0 signal contract only; temperatures are not safety clearance"
+}
+
+exit=1
+$ /Users/anowarislam/.pyenv/versions/3.11.11/bin/python3 labs/fleet/fleet_lab.py signal labs/fleet/fixtures/signal-healthy.json
+{
+  "status": "PASS",
+  "issues": [],
+  "inventory_count": 2,
+  "observed_count": 2,
+  "claim": "L0 signal contract only; temperatures are not safety clearance"
+}
+
+exit=0
+$ /Users/anowarislam/.pyenv/versions/3.11.11/bin/python3 labs/fleet/fleet_lab.py signal labs/fleet/fixtures/signal-clock-corrected.json
+{
+  "status": "PASS",
+  "issues": [],
+  "inventory_count": 2,
+  "observed_count": 2,
+  "claim": "L0 signal contract only; temperatures are not safety clearance"
+}
+
+exit=0
+$ /Users/anowarislam/.pyenv/versions/3.11.11/bin/python3 labs/fleet/fleet_lab.py reliability labs/fleet/fixtures/reliability.json
+{
+  "status": "PASS",
+  "model": "independent homogeneous Poisson events, fixed exposure",
+  "confidence": 0.95,
+  "cohorts": [
+    {
+      "name": "A-long-observation",
+      "events": 2,
+      "exposure_hours": 3000.0,
+      "rate_per_1000h": 0.6666666666666666,
+      "two_sided_rate_interval_per_1000h": [
+        0.08073642618132158,
+        2.4082292225746533
+      ],
+      "warnings": []
+    },
+    {
+      "name": "B-short-observation",
+      "events": 1,
+      "exposure_hours": 200.0,
+      "rate_per_1000h": 5.0,
+      "two_sided_rate_interval_per_1000h": [
+        0.1265890399214492,
+        27.858216954694484
+      ],
+      "warnings": []
+    },
+    {
+      "name": "C-zero-events",
+      "events": 0,
+      "exposure_hours": 2000.0,
+      "rate_per_1000h": 0.0,
+      "two_sided_rate_interval_per_1000h": [
+        0.0,
+        1.8444397270569675
+      ],
+      "warnings": [],
+      "one_sided_zero_event_upper_per_1000h": 1.497866136776995
+    }
+  ],
+  "alarm": {
+    "true_positive_fraction": 0.009000000000000001,
+    "false_positive_fraction": 0.0495,
+    "positive_predictive_value": 0.15384615384615385
+  },
+  "claim": "computed model result, not evidence that model assumptions hold"
+}
+
+exit=0
+$ /Users/anowarislam/.pyenv/versions/3.11.11/bin/python3 labs/fleet/fleet_lab.py reliability labs/fleet/fixtures/reliability-censored.json
+{
+  "status": "PASS",
+  "model": "independent homogeneous Poisson events, fixed exposure",
+  "confidence": 0.95,
+  "cohorts": [
+    {
+      "name": "A-long-observation",
+      "events": 2,
+      "exposure_hours": 2100.0,
+      "rate_per_1000h": 0.9523809523809523,
+      "two_sided_rate_interval_per_1000h": [
+        0.11533775168760226,
+        3.440327460820933
+      ],
+      "warnings": [
+        "a3: potentially informative censoring; model may not apply"
+      ]
+    },
+    {
+      "name": "B-short-observation",
+      "events": 1,
+      "exposure_hours": 200.0,
+      "rate_per_1000h": 5.0,
+      "two_sided_rate_interval_per_1000h": [
+        0.1265890399214492,
+        27.858216954694484
+      ],
+      "warnings": []
+    },
+    {
+      "name": "C-zero-events",
+      "events": 0,
+      "exposure_hours": 2000.0,
+      "rate_per_1000h": 0.0,
+      "two_sided_rate_interval_per_1000h": [
+        0.0,
+        1.8444397270569675
+      ],
+      "warnings": [],
+      "one_sided_zero_event_upper_per_1000h": 1.497866136776995
+    }
+  ],
+  "alarm": {
+    "true_positive_fraction": 0.009000000000000001,
+    "false_positive_fraction": 0.0495,
+    "positive_predictive_value": 0.15384615384615385
+  },
+  "claim": "computed model result, not evidence that model assumptions hold"
+}
+
+exit=0
+$ /Users/anowarislam/.pyenv/versions/3.11.11/bin/python3 labs/fleet/fleet_lab.py lifecycle labs/fleet/fixtures/lifecycle-fault.json
+{
+  "status": "BLOCKED",
+  "final": {
+    "state": "qualifying",
+    "generation": 4
+  },
+  "history": [
+    {
+      "event_id": "d1",
+      "action": "begin_drain",
+      "result": "APPLIED",
+      "state": "draining",
+      "generation": 1
+    },
+    {
+      "event_id": "d2",
+      "action": "confirm_empty",
+      "result": "APPLIED",
+      "state": "drained",
+      "generation": 2
+    },
+    {
+      "event_id": "r1",
+      "action": "repair",
+      "result": "APPLIED",
+      "state": "repairing",
+      "generation": 3
+    },
+    {
+      "event_id": "q1",
+      "action": "qualify",
+      "result": "APPLIED",
+      "state": "qualifying",
+      "generation": 4
+    },
+    {
+      "event_id": "q2",
+      "action": "accept_checks",
+      "result": "QUALIFICATION_FAILED",
+      "state": "qualifying",
+      "generation": 4
+    },
+    {
+      "event_id": "p1",
+      "action": "promote",
+      "result": "STALE_GENERATION",
+      "state": "qualifying",
+      "generation": 4
+    }
+  ],
+  "claim": "single-process event replay with optimistic concurrency; no durable controller"
+}
+
+exit=1
+$ /Users/anowarislam/.pyenv/versions/3.11.11/bin/python3 labs/fleet/fleet_lab.py lifecycle labs/fleet/fixtures/lifecycle-recovered.json
+{
+  "status": "PASS",
+  "final": {
+    "state": "available",
+    "generation": 9
+  },
+  "history": [
+    {
+      "event_id": "d1",
+      "action": "begin_drain",
+      "result": "APPLIED",
+      "state": "draining",
+      "generation": 1
+    },
+    {
+      "event_id": "d2",
+      "action": "confirm_empty",
+      "result": "APPLIED",
+      "state": "drained",
+      "generation": 2
+    },
+    {
+      "event_id": "r1",
+      "action": "repair",
+      "result": "APPLIED",
+      "state": "repairing",
+      "generation": 3
+    },
+    {
+      "event_id": "q1",
+      "action": "qualify",
+      "result": "APPLIED",
+      "state": "qualifying",
+      "generation": 4
+    },
+    {
+      "event_id": "q2",
+      "action": "accept_checks",
+      "result": "QUALIFICATION_FAILED",
+      "state": "qualifying",
+      "generation": 4
+    },
+    {
+      "event_id": "quarantine-1",
+      "action": "quarantine",
+      "result": "APPLIED",
+      "state": "quarantined",
+      "generation": 5
+    },
+    {
+      "event_id": "resume-1",
+      "action": "resume_repair",
+      "result": "APPLIED",
+      "state": "repairing",
+      "generation": 6
+    },
+    {
+      "event_id": "requalify-1",
+      "action": "qualify",
+      "result": "APPLIED",
+      "state": "qualifying",
+      "generation": 7
+    },
+    {
+      "event_id": "checks-2",
+      "action": "accept_checks",
+      "result": "APPLIED",
+      "state": "ready",
+      "generation": 8
+    },
+    {
+      "event_id": "promote-2",
+      "action": "promote",
+      "result": "APPLIED",
+      "state": "available",
+      "generation": 9
+    }
+  ],
+  "claim": "single-process event replay with optimistic concurrency; no durable controller"
+}
+
+exit=0
+$ /Users/anowarislam/.pyenv/versions/3.11.11/bin/python3 labs/fleet/fleet_lab.py lifecycle labs/fleet/fixtures/lifecycle-contention.json
+{
+  "status": "PASS",
+  "final": {
+    "state": "available",
+    "generation": 6
+  },
+  "history": [
+    {
+      "event_id": "d1",
+      "action": "begin_drain",
+      "result": "APPLIED",
+      "state": "draining",
+      "generation": 1
+    },
+    {
+      "event_id": "d1",
+      "action": "begin_drain",
+      "result": "DUPLICATE",
+      "state": "draining",
+      "generation": 1
+    },
+    {
+      "event_id": "competing-repair",
+      "action": "repair",
+      "result": "STALE_GENERATION",
+      "state": "draining",
+      "generation": 1
+    },
+    {
+      "event_id": "d2",
+      "action": "confirm_empty",
+      "result": "APPLIED",
+      "state": "drained",
+      "generation": 2
+    },
+    {
+      "event_id": "r1",
+      "action": "repair",
+      "result": "APPLIED",
+      "state": "repairing",
+      "generation": 3
+    },
+    {
+      "event_id": "d1",
+      "action": "quarantine",
+      "result": "ID_REUSE_CONFLICT",
+      "state": "repairing",
+      "generation": 3
+    },
+    {
+      "event_id": "q1",
+      "action": "qualify",
+      "result": "APPLIED",
+      "state": "qualifying",
+      "generation": 4
+    },
+    {
+      "event_id": "q2",
+      "action": "accept_checks",
+      "result": "APPLIED",
+      "state": "ready",
+      "generation": 5
+    },
+    {
+      "event_id": "p1",
+      "action": "promote",
+      "result": "APPLIED",
+      "state": "available",
+      "generation": 6
+    }
+  ],
+  "claim": "single-process event replay with optimistic concurrency; no durable controller"
+}
+
+exit=0
+$ /Users/anowarislam/.pyenv/versions/3.11.11/bin/python3 labs/fleet/fleet_lab.py capacity labs/fleet/fixtures/capacity-fault.json
+{
+  "status": "FAIL",
+  "total_gpus": 128,
+  "demand_gpus": 80,
+  "scenarios": [
+    {
+      "lost_domain": "none",
+      "remaining_gpus": 128,
+      "admissible_gpus": 96,
+      "margin_gpus": 16
+    },
+    {
+      "lost_domain": "rack-1",
+      "remaining_gpus": 96,
+      "admissible_gpus": 72,
+      "margin_gpus": -8
+    },
+    {
+      "lost_domain": "rack-2",
+      "remaining_gpus": 96,
+      "admissible_gpus": 72,
+      "margin_gpus": -8
+    },
+    {
+      "lost_domain": "rack-3",
+      "remaining_gpus": 96,
+      "admissible_gpus": 72,
+      "margin_gpus": -8
+    },
+    {
+      "lost_domain": "rack-4",
+      "remaining_gpus": 96,
+      "admissible_gpus": 72,
+      "margin_gpus": -8
+    }
+  ],
+  "worst_margin_gpus": -8,
+  "claim": "homogeneous pooled GPU counts only; no topology, memory, or latency guarantee"
+}
+
+exit=1
+$ /Users/anowarislam/.pyenv/versions/3.11.11/bin/python3 labs/fleet/fleet_lab.py capacity labs/fleet/fixtures/capacity-recovered.json
+{
+  "status": "PASS",
+  "total_gpus": 128,
+  "demand_gpus": 72,
+  "scenarios": [
+    {
+      "lost_domain": "none",
+      "remaining_gpus": 128,
+      "admissible_gpus": 96,
+      "margin_gpus": 24
+    },
+    {
+      "lost_domain": "rack-1",
+      "remaining_gpus": 96,
+      "admissible_gpus": 72,
+      "margin_gpus": 0
+    },
+    {
+      "lost_domain": "rack-2",
+      "remaining_gpus": 96,
+      "admissible_gpus": 72,
+      "margin_gpus": 0
+    },
+    {
+      "lost_domain": "rack-3",
+      "remaining_gpus": 96,
+      "admissible_gpus": 72,
+      "margin_gpus": 0
+    },
+    {
+      "lost_domain": "rack-4",
+      "remaining_gpus": 96,
+      "admissible_gpus": 72,
+      "margin_gpus": 0
+    }
+  ],
+  "worst_margin_gpus": 0,
+  "claim": "homogeneous pooled GPU counts only; no topology, memory, or latency guarantee"
+}
+
+exit=0

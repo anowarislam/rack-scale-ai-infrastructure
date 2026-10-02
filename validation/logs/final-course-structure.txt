@@ -1,0 +1,7 @@
+Date: 2026-10-02 UTC
+Commands: python3 tools/validate_course.py; git diff --check
+
+Checked 24 months, 96 weeks, 29 monthly lesson entries, 48 outcomes.
+Checked 94 source records and 292 local links in 73 Markdown files.
+Scope: structure and local file targets only; prose, remote URLs, and hardware behavior require separate review.
+PASS: course structure and local links

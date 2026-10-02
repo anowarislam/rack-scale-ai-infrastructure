@@ -1,0 +1,24 @@
+{
+  "domains": [
+    {
+      "name": "rack-1",
+      "gpus": 32
+    },
+    {
+      "name": "rack-2",
+      "gpus": 32
+    },
+    {
+      "name": "rack-3",
+      "gpus": 32
+    },
+    {
+      "name": "rack-4",
+      "gpus": 32
+    }
+  ],
+  "headroom_fraction": 0.2,
+  "demand_gpus": 72,
+  "gang_size": 8,
+  "synthetic": true
+}

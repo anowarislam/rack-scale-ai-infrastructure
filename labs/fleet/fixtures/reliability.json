@@ -1,0 +1,62 @@
+{
+  "confidence": 0.95,
+  "cohorts": [
+    {
+      "name": "A-long-observation",
+      "observations": [
+        {
+          "asset_id": "a1",
+          "exposure_hours": 1000,
+          "events": 1,
+          "end_reason": "failure"
+        },
+        {
+          "asset_id": "a2",
+          "exposure_hours": 1000,
+          "events": 1,
+          "end_reason": "administrative"
+        },
+        {
+          "asset_id": "a3",
+          "exposure_hours": 1000,
+          "events": 0,
+          "end_reason": "administrative"
+        }
+      ]
+    },
+    {
+      "name": "B-short-observation",
+      "observations": [
+        {
+          "asset_id": "b1",
+          "exposure_hours": 100,
+          "events": 1,
+          "end_reason": "failure"
+        },
+        {
+          "asset_id": "b2",
+          "exposure_hours": 100,
+          "events": 0,
+          "end_reason": "administrative"
+        }
+      ]
+    },
+    {
+      "name": "C-zero-events",
+      "observations": [
+        {
+          "asset_id": "c1",
+          "exposure_hours": 2000,
+          "events": 0,
+          "end_reason": "administrative"
+        }
+      ]
+    }
+  ],
+  "alarm": {
+    "prevalence": 0.01,
+    "sensitivity": 0.9,
+    "false_positive_rate": 0.05
+  },
+  "synthetic": true
+}

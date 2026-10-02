@@ -1,0 +1,44 @@
+{
+  "domains": {
+    "exercise": "G1-E01",
+    "question": "Do two replicas survive loss of their common power feed?",
+    "facts": {"primary": "node-a", "failed_feed": "feed-a", "nodes": {"node-a": {"rack": "rack-a", "feed": "feed-a"}, "node-b": {"rack": "rack-a", "feed": "feed-a"}, "node-c": {"rack": "rack-b", "feed": "feed-b"}}},
+    "controls": {"secondary": {"type": "string", "choices": ["node-a", "node-b", "node-c"]}},
+    "broken": {"secondary": "node-b"}, "healthy": {"secondary": "node-c"}
+  },
+  "inventory": {
+    "exercise": "G1-E02",
+    "question": "Do identity reconciliation and locality require the same fix?",
+    "facts": {"os_serial": "SN-2302", "bmc_serial": "SN-2302", "gpu_pci_bdf": "0000:81:00.0", "gpu_numa": 1, "local_copy_ms": 12, "remote_copy_ms": 24, "change_record": "chassis replacement recorded in BMC; inventory update pending"},
+    "controls": {"recorded_serial": {"type": "string", "choices": ["SN-1407", "SN-2302"]}, "cpu_numa": {"type": "integer", "choices": [0, 1]}},
+    "broken": {"recorded_serial": "SN-1407", "cpu_numa": 0}, "healthy": {"recorded_serial": "SN-2302", "cpu_numa": 1}
+  },
+  "gpu": {
+    "exercise": "G1-E03",
+    "question": "Does an allocation failure imply the driver or device is broken?",
+    "facts": {"capacity_mib": 24576, "reserve_mib": 2048, "fixed_mib": 6144, "per_sample_mib": 2304, "driver_visible": true, "reference_output_matches": true, "xid_events": [], "change_record": "microbatch raised from 4 to 8"},
+    "controls": {"microbatch": {"type": "integer", "minimum": 1, "maximum": 16}},
+    "broken": {"microbatch": 8}, "healthy": {"microbatch": 4}
+  },
+  "fabric": {
+    "exercise": "G1-E04",
+    "question": "Can a collective mismatch and an incomplete checkpoint coexist?",
+    "facts": {"world_size": 4, "rank_counts": [1024, 1024, 512, 1024], "dtype": "float32", "checkpoint_gb": 80, "storage_gb_s": 4, "checkpoints": {"100": {"published": true, "valid_shards": 4}, "120": {"published": false, "valid_shards": 3}}, "network_errors_delta": 0, "transport": "synthetic socket model; no RDMA"},
+    "controls": {"rank2_count": {"type": "integer", "choices": [512, 1024]}, "resume_step": {"type": "integer", "choices": [100, 120]}},
+    "broken": {"rank2_count": 512, "resume_step": 120}, "healthy": {"rank2_count": 1024, "resume_step": 100}
+  },
+  "telemetry": {
+    "exercise": "G1-E05",
+    "question": "Is a green but stale dashboard evidence of current thermal health?",
+    "facts": {"now_s": 1000, "max_age_s": 30, "max_delivery_s": 10, "clock_uncertainty_s": 1, "samples": {"cached": {"observed_s": 700, "source_s": 710, "temperature_c": 42, "sample_count": 1}, "live": {"observed_s": 998, "source_s": 1008, "temperature_c": 56, "sample_count": 8}}, "source_clock_measurement": "source is 12 s ahead of collector; uncertainty 1 s", "temperature_limit": "not provided; no physical thermal-health verdict allowed"},
+    "controls": {"collector": {"type": "string", "choices": ["cached", "live"]}, "source_offset_s": {"type": "integer", "minimum": -30, "maximum": 30}, "role": {"type": "string", "choices": ["administrator", "telemetry-reader"]}},
+    "broken": {"collector": "cached", "source_offset_s": 0, "role": "administrator"}, "healthy": {"collector": "live", "source_offset_s": 12, "role": "telemetry-reader"}
+  },
+  "workload": {
+    "exercise": "G1-E06",
+    "question": "What happens to goodput when arrivals exceed service capacity?",
+    "facts": {"workers": 2, "service_ms": 400, "batches": 10, "deadline_ms": 1500, "arrival_model": "equal-size batch at each integer second", "correctness": "all synthetic completed responses correct; deadlines still matter"},
+    "controls": {"arrivals_per_s": {"type": "integer", "minimum": 1, "maximum": 12}},
+    "broken": {"arrivals_per_s": 8}, "healthy": {"arrivals_per_s": 4}
+  }
+}

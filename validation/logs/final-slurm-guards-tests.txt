@@ -1,0 +1,14 @@
+Command: python3 -m unittest discover -s labs/platforms/slurm -p 'test*.py' -v
+Date: 2026-10-02 UTC
+Interpreter: Python 3.11.11
+Exit status: 0
+
+test_checkpoint_timeout_never_requeues (test_requeue_guard.RequeueGuardTests.test_checkpoint_timeout_never_requeues) ... ok
+test_nonrunning_job_never_requeues (test_requeue_guard.RequeueGuardTests.test_nonrunning_job_never_requeues) ... ok
+test_ready_running_job_requeues_once (test_requeue_guard.RequeueGuardTests.test_ready_running_job_requeues_once) ... ok
+test_wrong_environment_never_requeues (test_requeue_guard.RequeueGuardTests.test_wrong_environment_never_requeues) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.041s
+
+OK
