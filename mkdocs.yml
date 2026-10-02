@@ -1,0 +1,139 @@
+site_name: Rack-scale AI infrastructure
+site_description: A theory-first course in AI systems, workload platforms, and fleet operations.
+site_url: https://anowarislam.github.io/rack-scale-ai-infrastructure/
+repo_url: https://github.com/anowarislam/rack-scale-ai-infrastructure
+repo_name: Course source
+edit_uri: ''
+docs_dir: .cache/pages-docs
+site_dir: .cache/pages-site
+strict: true
+use_directory_urls: true
+
+theme:
+  name: material
+  language: en
+  font: false
+  palette:
+    - scheme: default
+      primary: custom
+      accent: custom
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - toc.follow
+  # No linear footer: the two platform tracks are alternatives. The builder
+  # supplies course-map-aware Previous/Next links in each teaching chapter.
+
+plugins:
+  - search
+
+hooks:
+  - tools/build_pages.py
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - tables
+  - sane_lists
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+extra_css:
+  - stylesheets/course.css
+
+validation:
+  nav:
+    omitted_files: warn
+    not_found: warn
+    absolute_links: warn
+  links:
+    not_found: warn
+    anchors: warn
+    absolute_links: warn
+    unrecognized_links: warn
+
+nav:
+  - Course home: index.md
+  - Start here:
+      - Learning guide: Learning-Guide.md
+      - Study calendar: Study-Calendar.md
+      - Fundamentals bridge: 00-Fundamentals-Bridge.md
+  - Systems foundations:
+      - '01 - System map': 01-System-Map.md
+      - '02 - Server control': 02-Server-Control.md
+      - '03 - GPU runtime': 03-GPU-Runtime.md
+      - '04 - Fabric and storage': 04-Fabric-and-Storage.md
+      - '05 - Power, telemetry, security': 05-Power-Telemetry-and-Security.md
+      - '06 - Workloads': 06-Workloads.md
+      - '07 - Workload contract': 07-Workload-Contract.md
+  - 'Choose a platform: Kubernetes':
+      - Track overview: Kubernetes-Track.md
+      - '08 - Reference environment': Kubernetes-08-Reference-Environment.md
+      - '09 - Placement and fairness': Kubernetes-09-Placement-and-Fairness.md
+      - '10 - Workload recovery': Kubernetes-10-Workload-Recovery.md
+      - '11 - Operability': Kubernetes-11-Operability.md
+      - '12 - Integration and comparison': Kubernetes-12-Integration-and-Comparison.md
+  - 'Choose a platform: Slurm':
+      - Track overview: Slurm-Track.md
+      - '08 - Reference environment': Slurm-08-Reference-Environment.md
+      - '09 - Placement and fairness': Slurm-09-Placement-and-Fairness.md
+      - '10 - Workload recovery': Slurm-10-Workload-Recovery.md
+      - '11 - Operability': Slurm-11-Operability.md
+      - '12 - Integration and comparison': Slurm-12-Integration-and-Comparison.md
+  - Fleet operations:
+      - '13 - Fleet truth': 13-Fleet-Truth.md
+      - '14 - Reliability': 14-Reliability.md
+      - '15 - Incidents and change': 15-Incidents-and-Change.md
+      - '16 - Lifecycle automation': 16-Lifecycle-Automation.md
+      - '17 - Capacity and readiness': 17-Capacity-and-Readiness.md
+      - '18 - Specialty integration': 18-Specialty-Integration.md
+  - Choose a specialty:
+      - Specialty overview: Specialties.md
+      - Rack lifecycle: Specialty-Rack-Lifecycle.md
+      - Performance: Specialty-Performance.md
+      - Workload platform: Specialty-Workload-Platform.md
+      - Fleet automation: Specialty-Fleet-Automation.md
+  - Integrated practicum:
+      - Practicum overview: Practicum.md
+      - '19 - Inherit and baseline': 19-Inherit-and-Baseline.md
+      - '20 - Cross-layer performance': 20-Cross-Layer-Performance.md
+      - '21 - Compound recovery': 21-Compound-Recovery.md
+      - '22 - Rack readiness': 22-Rack-Readiness.md
+      - '23 - Portfolio decision': 23-Portfolio-Decision.md
+      - '24 - Final defense': 24-Final-Defense.md
+  - Assessments and capstones:
+      - Assessment gates: Assessment-Gates.md
+      - Progress template: Progress-Template.md
+      - Evidence template: Evidence-Template.md
+      - Capstone overview: Capstones.md
+      - Engineer capstone: Capstone-Engineer.md
+      - Aspiring leader capstone: Capstone-Aspiring-Leader.md
+      - Manager capstone: Capstone-Manager.md
+  - Labs and source evidence:
+      - Systems labs: Systems-Labs.md
+      - Hardware workbook: Hardware-Workbook.md
+      - Platform labs: Platform-Labs.md
+      - Kubernetes lab: Kubernetes-Lab.md
+      - Slurm lab: Slurm-Lab.md
+      - Fleet labs: Fleet-Labs.md
+      - Two-host recovery runbook: Two-Host-Recovery-Runbook.md
+      - Sources and evidence: Sources-and-Evidence.md
+  - 'Instructor keys: after your attempt':
+      - '19 - Inherit': Instructor-19-Key.md
+      - '20 - Performance': Instructor-20-Key.md
+      - '21 - Recovery': Instructor-21-Key.md
+      - '22 - Rack readiness': Instructor-22-Key.md
+      - '23 - Portfolio': Instructor-23-Key.md
+      - '24 - Defense': Instructor-24-Key.md

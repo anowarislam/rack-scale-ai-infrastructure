@@ -1,5 +1,7 @@
 # Publish the course reading edition
 
+The user clarified that GitHub Pages is the intended primary reading edition. Use [website publishing](pages-publishing.md) for current course publication. This document preserves the earlier wiki workflow.
+
 Edit lessons in the source repository, commit the change, and regenerate the wiki from that commit. The wiki is a reading edition; executable code, fixtures, source ledgers, validation reports, and project history remain in the repository. GitHub Wiki uses its own Git repository.
 
 The exporter uses Python 3.11 or later and the standard library. It reads committed Git objects, so uncommitted lesson edits are not included. Its explicit allowlist exports 61 source documents: all 30 teaching chapters, the learner guides, track indexes, assessments, specialties, practicum and instructor keys, practical instructions, and evidence introduction. It also generates `Home.md`, `_Sidebar.md`, and `_Footer.md`.

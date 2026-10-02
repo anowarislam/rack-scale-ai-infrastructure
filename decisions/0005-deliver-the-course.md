@@ -4,6 +4,8 @@ Decision date: 2026-10-02. Decision owner: the user; delivery coordination: the 
 
 Publication update, 2026-10-02: after pushing the course to a public repository, the user requested that it also be pushed and published as a GitHub Wiki. This supersedes the private-delivery scope below. The original decision remains as history; the repository is the canonical source for the wiki reading edition.
 
+Destination clarification, 2026-10-02: the user then clarified that GitHub Pages was intended. The course website is the primary reading edition, generated from the existing lesson sources. The earlier wiki publication is retained as history.
+
 ## Decision
 
 Build a complete private self-study course in this repository. The user's current request to finish the course supersedes the planning-only delivery boundary in the July charter and implementation plan. Preserve those documents as design history. They are not instructions to produce another planning package before teaching can begin.

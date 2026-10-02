@@ -9,7 +9,8 @@ from urllib.parse import unquote, urlsplit
 
 
 ROOT = Path(__file__).resolve().parents[1]
-EXCLUDED = {".git", ".cache", ".worktrees", ".superpowers", "__pycache__", "learner-work"}
+# Site templates link to staged pages; build_pages.py validates those targets.
+EXCLUDED = {".git", ".cache", ".worktrees", ".superpowers", "__pycache__", "learner-work", "site_src"}
 errors = []
 
 

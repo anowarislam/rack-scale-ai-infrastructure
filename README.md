@@ -1,6 +1,6 @@
 # Rack-scale AI infrastructure: from foundations to integrated practice
 
-Read the [GitHub Wiki](https://github.com/anowarislam/rack-scale-ai-infrastructure/wiki) for the course reading edition. This repository holds the canonical lesson sources, runnable exercises, and validation records. See [wiki publishing](docs/wiki-publishing.md) for the update workflow.
+Read the [course website](https://anowarislam.github.io/rack-scale-ai-infrastructure/) on GitHub Pages. This repository holds the canonical lesson sources, runnable exercises, and validation records. See [website publishing](docs/pages-publishing.md) for the update workflow.
 
 Start with [the learning guide](LEARNING-GUIDE.md), then [the fundamentals bridge](curriculum/00-bridge.md) and [month 1: how the system fits together](curriculum/01-system-map.md). The course prioritizes **theory, worked examples, and reasoned answers**. Practical exercises test the explanations.
 

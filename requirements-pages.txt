@@ -1,0 +1,6 @@
+# Direct build dependencies, verified against PyPI on 2026-10-02.
+# Use Python 3.11 or newer. Transitive dependencies are resolved by pip.
+mkdocs==1.6.1
+mkdocs-material==9.7.7
+Markdown==3.11
+pymdown-extensions==12.1

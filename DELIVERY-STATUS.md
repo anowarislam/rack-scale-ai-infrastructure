@@ -54,6 +54,6 @@ Open [the learning guide](LEARNING-GUIDE.md), attempt [the bridge diagnostic](cu
 
 ## Publication
 
-The course source is published in the [public repository](https://github.com/anowarislam/rack-scale-ai-infrastructure). The user subsequently requested a GitHub Wiki reading edition; its [home page](https://github.com/anowarislam/rack-scale-ai-infrastructure/wiki) is live. The [publishing workflow](docs/wiki-publishing.md) exports the lessons from a specific source commit and preserves that revision in links to runnable files. Source control and wiki publication do not change the native-environment verification limits above.
+The course source is published in the [public repository](https://github.com/anowarislam/rack-scale-ai-infrastructure). After the initial wiki publication, the user clarified that GitHub Pages was the intended destination. The [course website](https://anowarislam.github.io/rack-scale-ai-infrastructure/) is the primary reading edition. Its [publishing workflow](docs/pages-publishing.md) builds the lessons from a specific source commit and preserves that revision in links to runnable files. Website publication does not change the native-environment verification limits above.
 
 No vendor endorsement, certification, or job equivalence is claimed.
