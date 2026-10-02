@@ -2,6 +2,8 @@
 
 The first incident decision is about protecting the service while preserving options. It need not wait for a complete root-cause narrative. The second is about who is allowed to change what. **G3-E03** assesses **G3-O05**, leading a bounded incident role, and **G3-O06**, selecting and verifying a recovery mode. Read [Month 14](14-reliability.md) before using rates to justify an incident decision.
 
+For published examples, use the [failure casebook](../incidents/README.md). Compare [GitHub's stateful recovery](../incidents/02-github-partition.md), [OpenAI's control-plane incident](../incidents/05-openai-control-plane.md), and [GitLab's restore](../incidents/07-gitlab-backups.md), then try the [incident-review workshop](../incidents/review-workshop.md). These companion readings develop the theory within your existing study budget.
+
 ## Separate impact, mechanism, and cause
 
 Impact describes what users cannot do: a training run lost progress, requests missed a latency objective, or capacity could not be admitted. A symptom is an observation: a queue grew or a link reported retries. A mechanism explains a path: retries consumed workers, delaying otherwise healthy requests. A root-cause claim also explains why the mechanism was triggered and why defenses did not contain it.

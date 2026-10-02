@@ -2,6 +2,8 @@
 
 Technical lessons cite their public sources near the relevant claims. The machine-readable ledgers divide source ownership across [systems](systems-sources.json), [platforms](platform-sources.json), and [fleet/practicum](fleet-sources.json). Each record contains an identifier, title, URL, access date, version or applicability scope, supported claims, and limitations.
 
+The [failure casebook](../incidents/README.md) adds public incident reports and original fleet studies in three ledgers: [network/software](incident-network-sources.json), [recovery/isolation](incident-recovery-sources.json), and [hardware/fleet](incident-hardware-sources.json). Each record also identifies the case it supports. A published operator account is attributed evidence, not an independent reconstruction from private logs. Case examples and transfers to other systems are explicitly labeled course models or inferences.
+
 A retrieved official document establishes only the claims it actually makes for its stated version and context. It does not prove that a local exercise ran successfully, that a product is installed here, or that a company deploys the documented feature internally. Execution evidence is recorded separately in [validation results](../validation/RESULTS.md).
 
 Original course explanations, synthetic data, worked examples, and course rules are teaching material. Their numerical assumptions are stated in the exercise. They are not observations of a real fleet. A source reference does not turn a synthetic case into a production benchmark.

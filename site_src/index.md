@@ -176,6 +176,32 @@ Apply the mechanisms to an unfamiliar synthetic fleet. Investigate performance, 
 
 </section>
 
+<section class="course-practice" aria-labelledby="learn-from-failures" markdown="1">
+<div markdown="1">
+<p class="course-kicker">Real incidents. Decisions you can reason through.</p>
+
+## Learn from systems that failed. { #learn-from-failures }
+
+Why can a healthy fleet become unreachable? Why can a backup fail to restore? What if a successful computation produces the wrong answer?
+
+Study 13 cases from published incident reports and fleet research. Follow the mechanism, work a numerical example, and choose a recovery action before opening the reasoned answer.
+
+[Open the failure casebook](Failure-Casebook.md){ .course-button }
+
+</div>
+<div class="course-resource-links" markdown="1">
+
+[How to read a postmortem](Reading-Postmortems.md)
+
+[Meta: losing the recovery path](Case-01-Meta-Network.md)
+
+[OpenAI: control-plane overload](Case-05-OpenAI-Control-Plane.md)
+
+[Practice an incident review](Incident-Review-Workshop.md)
+
+</div>
+</section>
+
 <section class="course-method" aria-labelledby="how-learning-works" markdown="1">
 
 <div class="course-section-intro" markdown="1">

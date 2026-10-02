@@ -12,7 +12,7 @@ import sys
 from urllib.parse import unquote, urljoin, urlsplit
 
 from export_wiki import (
-    Links, REPOSITORY, ROOT, Snapshot, chapter_navigation, checked_output,
+    Links, PAGE_SPECS, REPOSITORY, ROOT, Snapshot, chapter_navigation, checked_output,
     page_map, rewrite_markdown,
 )
 
@@ -22,6 +22,26 @@ GENERATOR = "rack-scale-course-pages-v1"
 MANIFEST = "course-manifest.json"
 OWNER = ".pages-build.json"
 ASSETS = {"site_src/index.md": "index.md", "site_src/stylesheets/course.css": "stylesheets/course.css"}
+
+# The casebook extends the website; the historical wiki keeps its own allowlist.
+INCIDENT_PAGE_SPECS = (
+    ("incidents/README.md", "Failure-Casebook"),
+    ("incidents/reading-method.md", "Reading-Postmortems"),
+    ("incidents/review-workshop.md", "Incident-Review-Workshop"),
+    ("incidents/01-meta-network.md", "Case-01-Meta-Network"),
+    ("incidents/02-github-partition.md", "Case-02-GitHub-Partition"),
+    ("incidents/03-cloudflare-regex.md", "Case-03-Cloudflare-Regex"),
+    ("incidents/04-fastly-latent-bug.md", "Case-04-Fastly-Latent-Bug"),
+    ("incidents/05-openai-control-plane.md", "Case-05-OpenAI-Control-Plane"),
+    ("incidents/06-s3-recovery.md", "Case-06-S3-Recovery"),
+    ("incidents/07-gitlab-backups.md", "Case-07-GitLab-Backups"),
+    ("incidents/08-cloudflare-power.md", "Case-08-Cloudflare-Power"),
+    ("incidents/09-llama-training.md", "Case-09-Llama-Training"),
+    ("incidents/10-silent-corruption.md", "Case-10-Silent-Corruption"),
+    ("incidents/11-ebs-remirroring.md", "Case-11-EBS-Remirroring"),
+    ("incidents/12-google-network.md", "Case-12-Google-Network"),
+    ("incidents/13-openai-data-isolation.md", "Case-13-OpenAI-Data-Isolation"),
+)
 
 
 class PageLinks(Links):
@@ -49,11 +69,11 @@ def prepare_markdown(text):
 
 
 def render(snapshot, asset_root=ROOT):
-    pages = page_map()
+    pages = page_map(PAGE_SPECS + INCIDENT_PAGE_SPECS)
     course = json.loads(snapshot.read("course-map.json"))
     chapters = [course["bridge"]] + [p for month in course["months"] for p in month["lessons"]]
-    if len(pages) != 61 or len(chapters) != 30 or len(set(chapters)) != 30 or not set(chapters) <= pages.keys():
-        raise ValueError("Expected 61 source pages and all 30 distinct teaching chapters")
+    if len(chapters) != 30 or len(set(chapters)) != 30 or not set(chapters) <= pages.keys():
+        raise ValueError("Expected all 30 distinct teaching chapters in the publication allowlist")
     links, navigation = PageLinks(snapshot, pages), chapter_navigation(course)
     rendered, hashes = {}, {}
     for source, name in pages.items():
@@ -61,6 +81,8 @@ def render(snapshot, asset_root=ROOT):
         hashes[source] = hashlib.sha256(original.encode()).hexdigest()
         body = prepare_markdown(rewrite_markdown(original, lambda target: links.rewrite(target, source)))
         footer = ["[Course home](index.md)", links.page("CALENDAR.md", "Study calendar")]
+        if source.startswith("incidents/") and source != "incidents/README.md":
+            footer.insert(1, links.page("incidents/README.md", "Failure casebook"))
         for label, targets in zip(("Previous", "Next"), navigation.get(source, ([], []))):
             footer.extend(links.page(p, f"{label}: {pages[p].replace('-', ' ')}") for p in targets)
         footer.append(f"[Source Markdown]({links.source_url(source)})")
@@ -188,7 +210,7 @@ def main():
         snapshot = Snapshot(ROOT, args.source_ref)
         rendered, manifest = render(snapshot)
         stage(rendered)
-        print(f"PASS: staged 61 source pages, 1 homepage, 30 teaching chapters from {snapshot.ref}", flush=True)
+        print(f"PASS: staged {len(manifest['pages'])} source pages, 1 homepage, 30 teaching chapters from {snapshot.ref}", flush=True)
         if not args.prepare_only:
             output = owned_directory(ROOT / ".cache/pages-site")
             try:
@@ -196,7 +218,7 @@ def main():
             finally:
                 (output / OWNER).write_text(json.dumps({"generator": GENERATOR}) + "\n")
             count = validate_site(output, manifest)
-            print(f"PASS: built 62 reading pages; checked {count} local HTML links/assets and their anchors")
+            print(f"PASS: built {len(manifest['pages']) + 1} reading pages; checked {count} local HTML links/assets and their anchors")
             print(f"Output: {output}\nSource: {snapshot.ref}")
         return 0
     except (ValueError, OSError, subprocess.CalledProcessError) as exc:

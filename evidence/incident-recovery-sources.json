@@ -1,0 +1,55 @@
+{
+  "scope": "Primary operator accounts for recovery and isolation cases. Access checked 2026-10-02. Teaching models and numeric examples are original synthetic analyses, not incident measurements.",
+  "sources": [
+    {
+      "id": "INC-R01",
+      "title": "API, ChatGPT & Sora Facing Issues",
+      "url": "https://status.openai.com/incidents/ctrsv3lwd797",
+      "accessed_at": "2026-10-02",
+      "version_scope": "December 11, 2024 incident postmortem",
+      "supports": ["Reported telemetry, control-plane, DNS, and recovery sequence"],
+      "limitations": ["Operator account; deployment-specific; no current-topology claim"],
+      "case": "incidents/05-openai-control-plane.md"
+    },
+    {
+      "id": "INC-R02",
+      "title": "Summary of the Amazon S3 Service Disruption in the Northern Virginia (US-EAST-1) Region",
+      "url": "https://aws.amazon.com/message/41926/",
+      "accessed_at": "2026-10-02",
+      "version_scope": "February 28, 2017 regional incident",
+      "supports": ["Reported capacity-removal cause and staged restoration"],
+      "limitations": ["Operator account; historical regional scope"],
+      "case": "incidents/06-s3-recovery.md"
+    },
+    {
+      "id": "INC-R03",
+      "title": "Postmortem of database outage of January 31",
+      "url": "https://about.gitlab.com/blog/postmortem-of-database-outage-of-january-31/",
+      "accessed_at": "2026-10-02",
+      "version_scope": "February 10, 2017 postmortem",
+      "supports": ["Reported deletion, recovery failures, restoration, and loss scope"],
+      "limitations": ["Operator account; historical GitLab.com only"],
+      "case": "incidents/07-gitlab-backups.md"
+    },
+    {
+      "id": "INC-R04",
+      "title": "Post mortem on the Cloudflare Control Plane and Analytics Outage",
+      "url": "https://blog.cloudflare.com/post-mortem-on-cloudflare-control-plane-and-analytics-outage/",
+      "accessed_at": "2026-10-02",
+      "version_scope": "November 4, 2023 postmortem",
+      "supports": ["Reported power loss, dependency gaps, and restoration"],
+      "limitations": ["Operator account; electrical sequence partly speculative"],
+      "case": "incidents/08-cloudflare-power.md"
+    },
+    {
+      "id": "INC-R05",
+      "title": "March 20 ChatGPT outage: Here's what happened",
+      "url": "https://openai.com/index/march-20-chatgpt-outage/",
+      "accessed_at": "2026-10-02",
+      "version_scope": "March 24, 2023 incident explanation",
+      "supports": ["Reported client bug, potential exposure scope, and recovery"],
+      "limitations": ["Operator account; potential exposure is not confirmed disclosure"],
+      "case": "incidents/13-openai-data-isolation.md"
+    }
+  ]
+}

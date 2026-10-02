@@ -15,7 +15,8 @@ The main deliverable is theory with worked examples and reasoned answers. Local 
 | Practicum | Six integrated scenario packets, six separate instructor keys, and a concrete two-host CPU recovery procedure |
 | Capstones | Three distinct routes: engineer/principal, aspiring leader, manager/director |
 | Learner integration | Entry guide, 24-month calendar, four gates, evidence/progress templates, and machine-readable map |
-| Source records | 94 scoped primary-source records across three ledgers; citations within lessons |
+| Failure casebook | 13 cases from public incident reports and fleet studies; reading method, worked examples, reasoned answers, comparison workshop, and links to the core lessons |
+| Source records | 94 core and 13 casebook primary-source records across six ledgers; citations within the material |
 
 There are **30 lesson chapters including the bridge and both platform tracks**. One learner follows 24 monthly lessons plus the bridge, with the secondary platform's bounded comparison work. Four gates contain 24 assessed bundles and 48 atomic outcomes. The 96-week calendar contains 70 build/apply weeks, 18 remediation weeks, and eight defense/transfer weeks, plus eight unscheduled break weeks.
 
@@ -31,6 +32,8 @@ There are **30 lesson chapters including the bridge and both platform tracks**. 
 - [x] Record unrun environments and distinguish them from authoring completion.
 
 Three GPT Astra agents at maximum reasoning effort authored separate areas and reviewed another author's work. The main agent coordinated scope, integration, acceptance, and independent final checks.
+
+The subsequent [failure casebook](incidents/README.md) adds 16 reading pages: 13 cases, an index, a postmortem-reading method, and an incident-review workshop. It preserves the 30 core teaching chapters and existing assessment route. Three GPT Astra agents at maximum reasoning effort researched and authored the cases; another reader checked each group, while the coordinator integrated and reviewed the material. See the [casebook acceptance record](validation/INCIDENT-REVIEW.md) for the review scope, corrections, and source limitations.
 
 ## Verification status
 

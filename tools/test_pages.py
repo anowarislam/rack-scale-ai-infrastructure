@@ -96,7 +96,7 @@ class BuiltEditionTests(unittest.TestCase):
         cls.rendered, cls.expected_manifest = pages.render(cls.snapshot)
 
     def test_complete_allowlist_and_committed_source_hashes(self):
-        self.assertEqual(61, len(self.manifest["pages"]))
+        self.assertEqual(77, len(self.manifest["pages"]))
         self.assertEqual(30, len(set(self.manifest["teaching_chapters"])))
         self.assertEqual(self.manifest, self.expected_manifest)
         expected_files = {"index.md", "stylesheets/course.css", pages.MANIFEST} | set(self.manifest["pages"].values())
@@ -121,10 +121,31 @@ class BuiltEditionTests(unittest.TestCase):
                 for (_, expected), actual in zip(blocks, content.pre):
                     self.assertEqual(expected.rstrip("\n"), actual.rstrip("\n"))
                 self.assertNotIn('<details markdown="1">', html)
-            details += content.tags.count("details")
-            diagrams += html.count('<pre class="mermaid">')
+            if not source.startswith("incidents/"):
+                details += content.tags.count("details")
+                diagrams += html.count('<pre class="mermaid">')
         self.assertEqual(19, details)
         self.assertEqual(8, diagrams)
+
+    def test_casebook_has_published_answers_sources_and_search_entries(self):
+        cases = {source for source, _ in pages.INCIDENT_PAGE_SPECS if re.match(r"incidents/\d{2}-", source)}
+        self.assertEqual(13, len(cases))
+        self.assertFalse(cases.intersection(self.manifest["teaching_chapters"]))
+        course = json.loads(self.snapshot.read("course-map.json"))
+        records = [record for ledger in course["source_ledgers"] if "/incident-" in ledger
+                   for record in json.loads(self.snapshot.read(ledger))["sources"]]
+        self.assertEqual(cases, {record["case"] for record in records})
+        for record in records:
+            self.assertIn(record["url"], self.snapshot.read(record["case"]))
+        search = json.loads((self.site / "search/search_index.json").read_text())
+        locations = {entry["location"].split("#")[0] for entry in search["docs"]}
+        for source in cases:
+            with self.subTest(source=source):
+                name = self.manifest["pages"][source].removesuffix(".md")
+                html = (self.site / name / "index.html").read_text()
+                self.assertIn(name + "/", locations)
+                self.assertGreaterEqual(Content(html).tags.count("details"), 1)
+                self.assertIn("../Failure-Casebook/", html)
 
     def test_branch_navigation_does_not_require_switching_platform(self):
         month7 = self.rendered["07-Workload-Contract.md"].rsplit("\n---\n", 1)[1]

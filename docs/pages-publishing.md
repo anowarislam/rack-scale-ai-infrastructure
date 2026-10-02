@@ -38,6 +38,8 @@ A successful Git push is not publication evidence. Confirm the workflow's deploy
 
 The website includes the complete teaching route and supporting learner pages. Links between lessons stay within the website. Links to runnable files and source records identify the matching repository commit, so commands and reading material can be used together.
 
+The failure casebook is an additional website section. Its source files live in `incidents/`; its explicit publication list is `INCIDENT_PAGE_SPECS` in `tools/build_pages.py`, and its navigation is in `mkdocs.yml`. The historical wiki allowlist is separate. Adding a case requires its source record, navigation entry, answer exercise, and inclusion in the website's coverage checks. Case readings do not change the 30 core teaching chapters.
+
 Change lessons in their existing source directories. Change the home page and visual styling in `site_src/`. Preserve the course's distinction between explanations, synthetic examples, executed local checks, native hardware evidence, and learner assessment.
 
 GitHub documents the [Pages workflow and artifact deployment model](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages). MkDocs documents [configuration and site URLs](https://www.mkdocs.org/user-guide/configuration/).

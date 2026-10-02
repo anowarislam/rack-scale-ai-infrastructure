@@ -105,6 +105,23 @@ nav:
       - Performance: Specialty-Performance.md
       - Workload platform: Specialty-Workload-Platform.md
       - Fleet automation: Specialty-Fleet-Automation.md
+  - Learn from real failures:
+      - Failure casebook: Failure-Casebook.md
+      - How to read a postmortem: Reading-Postmortems.md
+      - '01 - Meta network outage': Case-01-Meta-Network.md
+      - '02 - GitHub network partition': Case-02-GitHub-Partition.md
+      - '03 - Cloudflare regular expression': Case-03-Cloudflare-Regex.md
+      - '04 - Fastly latent bug': Case-04-Fastly-Latent-Bug.md
+      - '05 - OpenAI control plane': Case-05-OpenAI-Control-Plane.md
+      - '06 - Amazon S3 recovery': Case-06-S3-Recovery.md
+      - '07 - GitLab backups': Case-07-GitLab-Backups.md
+      - '08 - Cloudflare power': Case-08-Cloudflare-Power.md
+      - '09 - Llama training fleet study': Case-09-Llama-Training.md
+      - '10 - Silent corruption study': Case-10-Silent-Corruption.md
+      - '11 - Amazon EBS recovery storm': Case-11-EBS-Remirroring.md
+      - '12 - Google network incident': Case-12-Google-Network.md
+      - '13 - OpenAI data isolation': Case-13-OpenAI-Data-Isolation.md
+      - Incident-review workshop: Incident-Review-Workshop.md
   - Integrated practicum:
       - Practicum overview: Practicum.md
       - '19 - Inherit and baseline': 19-Inherit-and-Baseline.md

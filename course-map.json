@@ -779,7 +779,10 @@
   "source_ledgers": [
     "evidence/systems-sources.json",
     "evidence/platform-sources.json",
-    "evidence/fleet-sources.json"
+    "evidence/fleet-sources.json",
+    "evidence/incident-network-sources.json",
+    "evidence/incident-recovery-sources.json",
+    "evidence/incident-hardware-sources.json"
   ],
   "validation": "validation/RESULTS.md"
 }

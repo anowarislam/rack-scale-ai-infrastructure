@@ -40,6 +40,12 @@ The common systems core is months 1-6. Month 7 introduces workload contracts. In
 
 In months 13-18, select one of [four bounded specialties](specialties/README.md). A second specialty is enrichment after the core. In the practicum, choose the capstone that matches the evidence you want to produce: technical engineering, aspiring leadership, or management decision-making. Each has a different deliverable; none implies equivalent real-world experience.
 
+## Learn from real failures alongside the theory
+
+Use the [failure casebook](incidents/README.md) to see why plausible designs and recovery plans can fail. Begin with [the reading method](incidents/reading-method.md), then the Meta network, GitLab recovery, and OpenAI control-plane cases. Each case separates the published account from an original worked example and gives you a decision question before the answer.
+
+Choose one case that matches your current lesson and use it within a theory or review session. The casebook is optional enrichment, not an extra mandatory track. Later, use the [incident-review workshop](incidents/review-workshop.md) to compare mechanisms and write corrective actions with testable completion criteria.
+
 ## Calendar and hardware planning
 
 The [calendar](CALENDAR.md) contains 96 scheduled weeks plus eight unscheduled break weeks. Months 1-18 each reserve the fourth week for validation and remediation. Months 19-22 apply known mechanisms in compound scenarios. Months 23-24 emphasize capstone defense, correction, and transfer.

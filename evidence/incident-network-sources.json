@@ -1,0 +1,45 @@
+{
+  "scope": "Primary operator accounts for four incident teaching cases. Historical statements are attributed; worked examples, counterfactuals, and AI infrastructure transfers are course models rather than reconstructions. Sources accessed on 2026-10-02.",
+  "sources": [
+    {
+      "id": "INC-N01",
+      "title": "More details about the October 4 outage",
+      "url": "https://engineering.fb.com/2021/10/05/networking-traffic/outage-details/",
+      "accessed_at": "2026-10-02",
+      "version_scope": "2021-10-04 incident; published 2021-10-05",
+      "supports": "Backbone failure, dependency cascade, recovery.",
+      "limitations": "Operator account; no internal evidence independently examined.",
+      "case": "incidents/01-meta-network.md"
+    },
+    {
+      "id": "INC-N02",
+      "title": "October 21 post-incident analysis",
+      "url": "https://github.blog/news-insights/company-news/oct21-post-incident-analysis/",
+      "accessed_at": "2026-10-02",
+      "version_scope": "2018-10-21 to 2018-10-22 incident; published 2018-10-30; page marks update 2021-12-19",
+      "supports": "Partition, promotion, divergence, recovery.",
+      "limitations": "Operator account; later reconciliation completion not established.",
+      "case": "incidents/02-github-partition.md"
+    },
+    {
+      "id": "INC-N03",
+      "title": "Details of the Cloudflare outage on July 2, 2019",
+      "url": "https://blog.cloudflare.com/details-of-the-cloudflare-outage-on-july-2-2019/",
+      "accessed_at": "2026-10-02",
+      "version_scope": "2019-07-02 incident",
+      "supports": "Resource exhaustion, rollout, mitigation.",
+      "limitations": "Operator account; teaching matcher differs from historical expression.",
+      "case": "incidents/03-cloudflare-regex.md"
+    },
+    {
+      "id": "INC-N04",
+      "title": "Summary of June 8 outage",
+      "url": "https://www.fastly.com/blog/summary-of-june-8-outage",
+      "accessed_at": "2026-10-02",
+      "version_scope": "2021-06-08 incident; report dated 2021-06-08",
+      "supports": "Latent defect, activation, recovery milestones.",
+      "limitations": "Operator account; exact technical trigger undisclosed.",
+      "case": "incidents/04-fastly-latent-bug.md"
+    }
+  ]
+}

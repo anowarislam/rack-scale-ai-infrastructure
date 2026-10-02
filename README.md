@@ -6,6 +6,8 @@ Start with [the learning guide](LEARNING-GUIDE.md), then [the fundamentals bridg
 
 You will learn how CPUs, GPUs, memory, networks, storage, workload platforms, and fleet operations interact; how to diagnose failures across those boundaries; and how to make and defend operational decisions. The route develops a primary Kubernetes or Slurm platform, one technical specialty, and an integrated capstone.
 
+Learn from published failures in the [failure casebook](incidents/README.md): 13 cases covering network partitions, global changes, overload, recovery, power, large training runs, silent corruption, and data isolation. Each connects an incident or fleet study to a mechanism, a synthetic worked example, and a decision to reason through. Start with [how to read a postmortem](incidents/reading-method.md).
+
 For the exact delivered and tested state, read [DELIVERY-STATUS.md](DELIVERY-STATUS.md) and [validation results](validation/RESULTS.md). Course material being available does not mean you have passed its assessments. Your progress begins with your own evidence.
 
 ## Read the course

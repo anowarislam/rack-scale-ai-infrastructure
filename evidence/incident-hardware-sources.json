@@ -1,0 +1,45 @@
+{
+  "scope": "Historical hardware, training, storage-recovery, and network-control cases; original teaching models are not incident measurements",
+  "sources": [
+    {
+      "id": "INC-H01",
+      "title": "The Llama 3 Herd of Models",
+      "url": "https://arxiv.org/html/2407.21783v3#S3.SS3.SSS4",
+      "accessed_at": "2026-10-02",
+      "version_scope": "arXiv 2407.21783v3, November 23, 2024; section 3.3.4 and Table 5; PDF page 13 inspected",
+      "supports": "Published training interruption snapshot and useful-time definition",
+      "limitations": "Fleet study, not an outage timeline; faulty-GPU row percentage conflicts with its count; no transferable device rate",
+      "case": "incidents/09-llama-training.md"
+    },
+    {
+      "id": "INC-H02",
+      "title": "Cores that don't count",
+      "url": "https://sigops.org/s/conferences/hotos/2021/papers/hotos21-s01-hochschild.pdf",
+      "accessed_at": "2026-10-02",
+      "version_scope": "Hochschild et al., HotOS 2021 conference paper; sections 1-2; DOI 10.1145/3458336.3465297",
+      "supports": "Observed incorrect CPU computations and same-core validation counterexample",
+      "limitations": "Fleet study with undisclosed exact rates and incomplete physical-cause visibility; not GPU prevalence or deployment proof for every proposed defense",
+      "case": "incidents/10-silent-corruption.md"
+    },
+    {
+      "id": "INC-H03",
+      "title": "Summary of the Amazon EC2 and Amazon RDS Service Disruption in the US East Region",
+      "url": "https://aws.amazon.com/message/65648/",
+      "accessed_at": "2026-10-02",
+      "version_scope": "AWS April 29, 2011 postmortem of disruption beginning April 21, 2011",
+      "supports": "Published re-mirroring, capacity exhaustion, and control-plane coupling account",
+      "limitations": "Operator retrospective; historical design; no independent customer traces or current EBS guarantees",
+      "case": "incidents/11-ebs-remirroring.md"
+    },
+    {
+      "id": "INC-H04",
+      "title": "Google Cloud Networking Incident 19009",
+      "url": "https://status.cloud.google.com/incident/cloud-networking/19009",
+      "accessed_at": "2026-10-02",
+      "version_scope": "June 2, 2019 incident; detailed report posted June 6, 2019",
+      "supports": "Maintenance scope failure, control loss, and impaired recovery path",
+      "limitations": "Operator account; page summaries differ on end time; duration varies by region; not current private topology",
+      "case": "incidents/12-google-network.md"
+    }
+  ]
+}
