@@ -1,5 +1,7 @@
 # Rack-scale AI infrastructure: from foundations to integrated practice
 
+Read the [GitHub Wiki](https://github.com/anowarislam/rack-scale-ai-infrastructure/wiki) for the course reading edition. This repository holds the canonical lesson sources, runnable exercises, and validation records. See [wiki publishing](docs/wiki-publishing.md) for the update workflow.
+
 Start with [the learning guide](LEARNING-GUIDE.md), then [the fundamentals bridge](curriculum/00-bridge.md) and [month 1: how the system fits together](curriculum/01-system-map.md). The course prioritizes **theory, worked examples, and reasoned answers**. Practical exercises test the explanations.
 
 You will learn how CPUs, GPUs, memory, networks, storage, workload platforms, and fleet operations interact; how to diagnose failures across those boundaries; and how to make and defend operational decisions. The route develops a primary Kubernetes or Slurm platform, one technical specialty, and an integrated capstone.
@@ -70,4 +72,4 @@ The first command checks navigation, source-record shape, calendar accounting, a
 
 This repository began as a planning-only charter. [The delivery decision](decisions/0005-deliver-the-course.md) supersedes that restriction and records the shift to a theory-first course. The [original charter](course-charter.md) and [original planning plan](docs/superpowers/plans/2026-07-09-planning-package.md) remain as history. They are not additional prerequisites to studying or completing the course.
 
-The material is private local course work. No employer endorsement, professional certification, or public publication approval is implied.
+The course is publicly available for self-study. No employer endorsement, professional certification, or job equivalence is claimed.

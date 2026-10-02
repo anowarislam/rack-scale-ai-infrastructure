@@ -52,4 +52,8 @@ The repository evidence supports that scope mismatch. It does not establish the 
 
 Open [the learning guide](LEARNING-GUIDE.md), attempt [the bridge diagnostic](curriculum/00-bridge.md), then read [Month 1](curriculum/01-system-map.md). Begin with the theory and examples; run the practical exercise after you can predict its result. Use the [calendar](CALENDAR.md) to continue and [the gates](assessments/gates.md) to decide when to advance.
 
-All changes are saved locally. No Git commit or remote publication was made. Public-release approval, vendor endorsement, certification, and job equivalence are not claimed.
+## Publication
+
+The course source is published in the [public repository](https://github.com/anowarislam/rack-scale-ai-infrastructure). The user subsequently requested a GitHub Wiki reading edition; its [home page](https://github.com/anowarislam/rack-scale-ai-infrastructure/wiki) is live. The [publishing workflow](docs/wiki-publishing.md) exports the lessons from a specific source commit and preserves that revision in links to runnable files. Source control and wiki publication do not change the native-environment verification limits above.
+
+No vendor endorsement, certification, or job equivalence is claimed.
